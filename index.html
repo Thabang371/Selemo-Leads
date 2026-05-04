@@ -3,100 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selemo Leads Direct | High-Quality Lead Generation</title>
-    <meta name="description" content="Selemo Leads Direct provides high-quality, targeted lead generation and performance marketing to help your business grow.">
-    <!-- Tailwind CSS for styling -->
+    <title>Selemo Leads Direct | Lead Generation Specialists</title>
+    <meta name="description" content="High-quality lead generation and performance marketing services.">
+    
+    <!-- Google Fonts: Inter and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS for Layout & Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        selemoNavy: '#002B5B',
+                        selemoOrange: '#FF8C00',
+                        selemoGray: '#F4F4F4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #002B5B 0%, #001f42 100%); }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-white text-slate-800">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">SELEMO</div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">Get Leads</a>
+    <!-- Header / Navigation -->
+    <nav class="bg-white py-4 px-6 border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black text-selemoNavy tracking-tighter uppercase font-heading">
+                Selemo<span class="text-selemoOrange text-sm ml-1">Leads Direct</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 items-center font-bold text-sm uppercase tracking-wide">
+                <a href="#home" class="hover:text-selemoOrange transition">Home</a>
+                <a href="#services" class="hover:text-selemoOrange transition">Services</a>
+                <a href="#contact" class="bg-selemoOrange text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative bg-white pt-16 pb-32 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+    <section id="home" class="hero-gradient text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Direct Leads. <br><span class="text-blue-600">Real Growth.</span>
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-6 leading-tight">
+                    Direct Leads. <br>Proven Growth.
                 </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                    Stop chasing prospects. We deliver high-intent leads directly to your inbox, so you can focus on closing deals and scaling your business.
+                <p class="text-xl text-blue-100 mb-8 max-w-lg leading-relaxed">
+                    We specialize in high-intent lead generation. Stop wasting time on cold calls and start closing qualified prospects delivered straight to you.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 shadow-lg transition">Start Today</a>
-                    <a href="#services" class="border border-gray-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition">Learn More</a>
+                <a href="#contact" class="inline-block bg-selemoOrange text-white font-black px-10 py-4 rounded-lg text-lg uppercase tracking-wider hover:scale-105 transition-transform shadow-xl">
+                    Get Started Today
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-selemoOrange rounded-full opacity-20 blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Consultation" class="relative rounded-2xl shadow-2xl border-4 border-white/10">
                 </div>
             </div>
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Business Growth" class="rounded-3xl shadow-2xl">
-            </div>
         </div>
-    </header>
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4">
+    <section id="services" class="py-24 px-6 bg-selemoGray">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Our Services</h2>
-                <p class="text-gray-600">Tailored solutions for your specific industry.</p>
+                <h2 class="text-4xl font-heading font-extrabold text-selemoNavy mb-4">Our Core Services</h2>
+                <div class="w-20 h-1.5 bg-selemoOrange mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-bullseye text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Lead Generation</h3>
-                    <p class="text-gray-600">We identify and qualify prospects that are ready to buy your products or services.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Performance Marketing</h3>
-                    <p class="text-gray-600">Data-driven campaigns focused on ROI and measurable business expansion.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-paper-plane text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Direct Outreach</h3>
-                    <p class="text-gray-600">Direct-to-consumer strategies that cut out the noise and build immediate value.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8">Ready to scale?</h2>
-            <p class="text-gray-600 mb-12 text-lg">Send us a message and we will get back to you with a custom lead strategy.</p>
             
-            <form action="https://formspree.io/f/your-id" method="POST" class="grid grid-cols-1 gap-6 text-left">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Full Name" required class="p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none">
-                    <input type="email" name="email" placeholder="Email Address" required class="p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none">
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-selemoOrange hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-selemoNavy leading-tight">Lead Generation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Precision targeting to find clients who are actively looking for your specific services.
+                    </p>
                 </div>
-                <textarea name="message" rows="4" placeholder="How can we help?" required class="p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
-                <button type="submit" class="bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">Send Inquiry</button>
-            </form>
+                <!-- Card 2 -->
+                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-selemoNavy hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-selemoNavy leading-tight">Performance Marketing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        ROI-focused campaigns designed to scale your revenue without increasing your workload.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-selemoOrange hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-selemoNavy leading-tight">Direct Outreach</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Personalized strategies that put your brand directly in front of key decision-makers.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-gray-900 text-gray-400 text-center">
-        <p>&copy; 2024 Selemo Leads Direct. All rights reserved.</p>
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto bg-selemoNavy rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+            <div class="md:w-1/3 p-12 bg-selemoOrange text-white flex flex-col justify-center">
+                <h2 class="text-3xl font-heading font-extrabold mb-4">Contact Us</h2>
+                <p class="mb-6 font-medium">Ready to take the next step? Fill out the form and our team will be in touch.</p>
+                <div class="text-sm opacity-80 italic">Typically responds within 24 hours.</div>
+            </div>
+            
+            <div class="md:w-2/3 p-12 bg-white">
+                <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 uppercase tracking-wide">Name</label>
+                        <input type="text" name="name" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-selemoOrange outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 uppercase tracking-wide">Email</label>
+                        <input type="email" name="email" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-selemoOrange outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 uppercase tracking-wide">Message</label>
+                        <textarea name="message" rows="4" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-selemoOrange outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-selemoNavy text-white font-bold py-4 rounded-lg hover:bg-slate-900 transition shadow-lg">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12 px-6 text-center border-t border-gray-200">
+        <div class="text-xl font-black text-selemoNavy mb-4 uppercase font-heading">Selemo</div>
+        <p class="text-gray-500 text-sm">© 2026 Selemo Leads Direct. High Performance Marketing Solutions.</p>
     </footer>
 
+    <!-- Simple JavaScript for Form Feedback -->
+    <script>
+        // You can add JS logic here for animations or form validation
+        console.log("Selemo site loaded successfully.");
+    </script>
 </body>
 </html>
