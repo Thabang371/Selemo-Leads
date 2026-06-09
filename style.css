@@ -450,3 +450,104 @@ body {
         margin-bottom: 12px;
     }
 }
+/* --- Newsletter Page Layout Components --- */
+
+/* Sub-Hero Banner utilizing the background letter blocks graphic */
+.newsletter-banner {
+    margin-top: 60px; /* Clears fixed site navbar */
+    height: 260px;
+    position: relative;
+    /* Replace with your specific typography/letter blocks background image path */
+    background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.newsletter-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Soft screen overlay for white heading pop */
+}
+
+.newsletter-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.newsletter-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+/* Vertical Stack Layout Wrapper */
+.newsletter-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Creates the spacious vertical gaps between sections */
+    text-align: center;
+}
+
+/* Individual Content Category Blocks */
+.newsletter-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Clean dark grey typography for main category markers */
+.newsletter-heading {
+    color: #2c3033;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.newsletter-heading.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Subtext lines styled in soft slate grey */
+.newsletter-subtext {
+    color: #7a828a;
+    font-size: 13.5px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.newsletter-subtext.italicized {
+    font-style: italic;
+}
+
+.pulse-icon {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+/* Mobile adjustments to bring sections slightly closer together on small viewports */
+@media (max-width: 768px) {
+    .newsletter-container {
+        margin: 50px auto;
+        gap: 70px;
+    }
+    .newsletter-heading {
+        font-size: 22px;
+    }
+    .newsletter-subtext {
+        font-size: 12.5px;
+    }
+}
