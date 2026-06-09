@@ -345,3 +345,108 @@ body {
         gap: 40px;
     }
 }
+/* --- Services Page Layout Components --- */
+
+/* Sub-Hero Banner using the same texture pattern as About page */
+.services-banner {
+    margin-top: 60px; /* Offset to clear the fixed structural navbar */
+    height: 260px;
+    position: relative;
+    /* Reuses the same dark wood grain look from your screenshot */
+    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay to match */
+}
+
+.services-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.services-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* Core Main Grid Wrapper */
+.services-container {
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 0 30px;
+    background-color: #ffffff;
+}
+
+/* 3-Column Grid Configuration */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+/* Individual Service Cards */
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Soft gold/tan styling color for service headers */
+.service-title {
+    color: #cca462; 
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    height: 42px; /* Forces uniform alignment regardless of text wrapping to 2 lines */
+}
+
+/* Image Frames with precise aspect ratio mapping */
+.service-image-box {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Matches the landscape camera crop ratios from the design */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps imagery perfectly proportioned without warping */
+}
+
+/* Body Text Block Elements */
+.service-description {
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Media Query handling mobile and tablet viewports */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Shifts columns into a single column row stack */
+        gap: 50px;
+    }
+    
+    .service-title {
+        height: auto; /* Removes structural height lock on smaller mobile screen widths */
+        margin-bottom: 12px;
+    }
+}
