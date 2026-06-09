@@ -669,3 +669,175 @@ body {
         font-size: 12.5px;
     }
 }
+/* --- Contact Us Page Layout Components --- */
+
+/* Full Viewport background image layout setup */
+.contact-hero {
+    height: 100vh;
+    margin-top: 0;
+    position: relative;
+    /* Replace with your specific high-res local image asset path */
+    background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Semi-transparent screen mask overlay */
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); /* Protects text contrast over images */
+    z-index: 1;
+}
+
+/* Three-Column Workspace Layout Grid */
+.contact-content-grid {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 60px 30px 0 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr; /* Centers the narrow form between wider descriptions */
+    gap: 40px;
+    align-items: center;
+}
+
+/* Base side configurations */
+.contact-side-info {
+    color: #ffffff;
+}
+
+/* Left Informational Column text adjustments */
+.contact-side-info.left-side h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #cca462; /* Soft corporate gold text accent */
+}
+
+.contact-side-info.left-side p {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+}
+
+/* Embedded Map Window dimensions frame */
+.map-embed-frame {
+    width: 100%;
+    height: 160px;
+    background-color: #eaeaea;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Center Form Layout Card Frame */
+.contact-form-wrapper {
+    background-color: rgba(229, 213, 186, 0.85); /* Semitransparent warm gold/beige card background */
+    padding: 30px 25px;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-form-wrapper h3 {
+    color: #12161a;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Form Input Element Boxes */
+.interactive-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #12161a;
+    background-color: #ffffff;
+}
+
+/* Form Submission Action Button Styling */
+.form-submit-btn {
+    background-color: #12161a; /* Dark background matching the header menu styles */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+.form-submit-btn:hover {
+    background-color: #242b33;
+}
+
+/* Right Side Column Text layouts */
+.contact-side-info.right-side {
+    text-align: right; /* Aligned along right border margin matching image source */
+}
+
+.callout-title {
+    color: #cca462;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.callout-subtext {
+    font-size: 12.5px;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Media Breakpoints managing small layout viewports */
+@media (max-width: 992px) {
+    .contact-hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 50px 0;
+    }
+    
+    .contact-content-grid {
+        grid-template-columns: 1fr; /* Shifts into unified layout single column vertical stack flow */
+        gap: 40px;
+    }
+    
+    .contact-side-info.right-side {
+        text-align: left; /* Normalizes layout tracking to traditional left orientation on devices */
+    }
+    
+    .contact-form-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
