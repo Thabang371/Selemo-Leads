@@ -551,3 +551,121 @@ body {
         font-size: 12.5px;
     }
 }
+/* --- Careers Page Layout Components --- */
+
+/* Full Viewport background image configuration */
+.careers-hero {
+    height: 100vh;
+    margin-top: 0;
+    position: relative;
+    /* Replace with your local office photo asset source path */
+    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+}
+
+/* Subtle dark lens filter over the background image to protect light text readability */
+.careers-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+/* Structural flex container to shift text box to the right side of the screen */
+.careers-content-wrapper {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: flex-end; /* Pushes content right */
+}
+
+/* Right-aligned text card settings */
+.careers-text-box {
+    max-width: 550px;
+    text-align: right; /* Aligns paragraph text to the right border */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns the button element to the right */
+}
+
+/* Title configuration */
+.careers-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Golden/Yellow brand accent text */
+.highlight-yellow {
+    color: #cca462;
+}
+
+/* Body description paragraph layout */
+.careers-description {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* The solid corporate Action Button style */
+.cta-button {
+    display: inline-block;
+    background-color: #cca462; /* Brand gold/tan color */
+    color: #12161a; /* Dark text matching header navbar */
+    text-decoration: none;
+    padding: 10px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth hover transition mechanics */
+.cta-button:hover {
+    background-color: #bfa054;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Media Breakpoint query managing mobile/tablet orientation displays */
+@media (max-width: 768px) {
+    .careers-hero {
+        padding-top: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .careers-content-wrapper {
+        justify-content: center; /* Centers layout card fields on standard mobile viewports */
+        padding: 40px 20px;
+    }
+    
+    .careers-text-box {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .careers-title {
+        font-size: 18px;
+    }
+    
+    .careers-description {
+        font-size: 12.5px;
+    }
+}
