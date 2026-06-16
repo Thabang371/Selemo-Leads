@@ -1,4 +1,6 @@
-/* Reset and Base Styles */
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +13,12 @@ body {
     color: #333;
 }
 
-/* Header Styling */
+
+/* ==========================================================================
+   2. FIXED NAVIGATION HEADER (ALL PAGES)
+   ========================================================================== */
 .main-header {
-    background-color: #12161a; /* Sleek, very dark blue/grey from the photo */
+    background-color: #12161a; /* Sleek, very dark blue/grey */
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -32,27 +37,30 @@ body {
     padding: 0 20px;
 }
 
-/* Logo Alignment */
+/* Image Logo Area Elements */
 .logo-area {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    color: #e57c35; /* Orange accent color */
+    justify-content: center;
 }
 
-.logo-icon {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1;
+.logo-link {
+    display: block;
+    line-height: 0; /* Prevents ghost padding underneath image */
 }
 
-.logo-text {
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-top: 2px;
+.brand-logo-img {
+    height: 40px; 
+    width: auto; /* Maintains original proportions */
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-/* Navigation Links */
+.logo-link:hover .brand-logo-img {
+    transform: scale(1.03);
+}
+
+/* Navigation Menu Links */
 .nav-menu ul {
     display: flex;
     list-style: none;
@@ -73,77 +81,62 @@ body {
     color: #e57c35; /* Highlights active/hover state in brand orange */
 }
 
-/* Hero Section with Background Setup */
+
+/* ==========================================================================
+   3. INDEX / HOME PAGE HERO SECTION
+   ========================================================================== */
 .hero-section {
     height: 100vh;
     position: relative;
-    /* Temporarily using a placeholder workspace image; swap with your own asset later */
-    background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1920') no-repeat center center/cover;
+    background: url('images/homepage.avif') no-repeat center center/cover;
     display: flex;
     align-items: center;
-    padding-left: 10%;
-    margin-top: 0; /* Starts right under or behind fixed header */
+    padding-left: 8%;
+    margin-top: 0;
 }
 
-/* Dark subtle overlay to help light orange/yellow text pop over dark or messy images */
+/* Dark gradient overlay to secure text readability */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15); 
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%); 
     z-index: 1;
 }
 
-/* Main typography layout on the hero image */
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .hero-title {
-    font-size: 32px;
-    color: #d1a153; /* Soft gold/yellow from the overlay layout */
-    font-weight: 500;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    font-size: 36px;
+    color: #cca462; /* Corporate gold/tan accent */
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .hero-tagline {
     font-size: 20px;
-    color: #d1a153;
+    color: #ffffff; /* Clean white contrast */
     font-style: italic;
     font-weight: 400;
     line-height: 1.4;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-menu ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero-section {
-        padding-left: 20px;
-        justify-content: center;
-        text-align: center;
-    }
-}
-/* --- About Us Page Layout Components --- */
 
-/* Sub-Hero Banner with Rustic Wood Texture background overlay */
+/* ==========================================================================
+   4. ABOUT US PAGE COMPONENTS
+   ========================================================================== */
 .about-banner {
-    margin-top: 60px; /* Offset to clear the fixed structural header navbar */
+    margin-top: 60px; /* Offset to clear the fixed navbar */
     height: 260px;
     position: relative;
-    /* Replace with your local wood grain background image asset path */
     background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -157,7 +150,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45); /* Dark screen filter for heading visibility */
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .banner-content {
@@ -173,7 +166,6 @@ body {
     line-height: 1.3;
 }
 
-/* Core Main Wrapper layout */
 .about-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -181,14 +173,13 @@ body {
     background-color: #ffffff;
 }
 
-/* Footprints Paragraph Frame */
 .footprints-section {
     text-align: center;
     margin-bottom: 50px;
 }
 
 .section-accent-title {
-    color: #cca462; /* Soft corporate warm gold/tan styling tint */
+    color: #cca462;
     font-size: 24px;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
@@ -215,7 +206,7 @@ body {
     text-align: justify;
 }
 
-/* Three Pillar Framework Layout Elements */
+/* Three Pillar Framework */
 .pillars-header {
     display: flex;
     justify-content: space-between;
@@ -231,10 +222,7 @@ body {
     font-weight: 600;
 }
 
-/* Explicitly sets the width breakdown of the 3 text categories */
-.pillars-header h3:first-child {
-    width: 66%;
-}
+.pillars-header h3:first-child { width: 66%; }
 .pillars-header h3:last-child {
     width: 33%;
     text-align: left;
@@ -255,7 +243,7 @@ body {
     letter-spacing: 0.5px;
     margin-bottom: 12px;
     line-height: 1.4;
-    height: 36px; /* Keeps card titles aligned symmetrically */
+    height: 36px; /* Symmetrical alignment check */
 }
 
 .pillar-card p {
@@ -273,7 +261,7 @@ body {
     max-width: 950px;
 }
 
-/* --- Team Component Layout Profiles --- */
+/* Team Profile Elements */
 .team-section {
     padding-bottom: 60px;
 }
@@ -298,11 +286,10 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Two Column Executive Alignment Wrapper */
 .executives-grid {
     display: flex;
     justify-content: center;
-    gap: 120px; /* Expands spatial gap distance between profile structures */
+    gap: 120px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -314,7 +301,7 @@ body {
 
 .exec-image-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Forces exact square symmetry profiles */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: #eaeaea;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -324,35 +311,17 @@ body {
 .exec-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Prevents facial image stretching */
+    object-fit: cover;
 }
 
-/* Media Query breakpoints handling mobile device viewport screens */
-@media (max-width: 768px) {
-    .pillars-header {
-        display: none; /* Collapses headers for unified mobile flow */
-    }
-    .pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-    .pillar-card h4 {
-        height: auto;
-    }
-    .executives-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-}
-/* --- Services Page Layout Components --- */
 
-/* Sub-Hero Banner using the same texture pattern as About page */
+/* ==========================================================================
+   5. SERVICES PAGE COMPONENTS
+   ========================================================================== */
 .services-banner {
-    margin-top: 60px; /* Offset to clear the fixed structural navbar */
+    margin-top: 60px;
     height: 260px;
     position: relative;
-    /* Reuses the same dark wood grain look from your screenshot */
     background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -366,7 +335,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay to match */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .services-banner .banner-content {
@@ -381,7 +350,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Core Main Grid Wrapper */
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -389,7 +357,6 @@ body {
     background-color: #ffffff;
 }
 
-/* 3-Column Grid Configuration */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -397,13 +364,11 @@ body {
     align-items: start;
 }
 
-/* Individual Service Cards */
 .service-card {
     display: flex;
     flex-direction: column;
 }
 
-/* Soft gold/tan styling color for service headers */
 .service-title {
     color: #cca462; 
     font-size: 15px;
@@ -411,13 +376,12 @@ body {
     letter-spacing: 0.8px;
     line-height: 1.4;
     margin-bottom: 20px;
-    height: 42px; /* Forces uniform alignment regardless of text wrapping to 2 lines */
+    height: 42px;
 }
 
-/* Image Frames with precise aspect ratio mapping */
 .service-image-box {
     width: 100%;
-    aspect-ratio: 4 / 3; /* Matches the landscape camera crop ratios from the design */
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background-color: #f0f0f0;
     margin-bottom: 20px;
@@ -427,10 +391,9 @@ body {
 .service-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Keeps imagery perfectly proportioned without warping */
+    object-fit: cover;
 }
 
-/* Body Text Block Elements */
 .service-description {
     color: #666666;
     font-size: 13px;
@@ -438,26 +401,14 @@ body {
     text-align: justify;
 }
 
-/* Media Query handling mobile and tablet viewports */
-@media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* Shifts columns into a single column row stack */
-        gap: 50px;
-    }
-    
-    .service-title {
-        height: auto; /* Removes structural height lock on smaller mobile screen widths */
-        margin-bottom: 12px;
-    }
-}
-/* --- Newsletter Page Layout Components --- */
 
-/* Sub-Hero Banner utilizing the background letter blocks graphic */
+/* ==========================================================================
+   6. NEWSLETTER PAGE COMPONENTS
+   ========================================================================== */
 .newsletter-banner {
-    margin-top: 60px; /* Clears fixed site navbar */
+    margin-top: 60px;
     height: 260px;
     position: relative;
-    /* Replace with your specific typography/letter blocks background image path */
     background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -471,7 +422,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45); /* Soft screen overlay for white heading pop */
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .newsletter-banner .banner-content {
@@ -486,18 +437,16 @@ body {
     letter-spacing: 3px;
 }
 
-/* Vertical Stack Layout Wrapper */
 .newsletter-container {
     max-width: 800px;
     margin: 80px auto;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 100px; /* Creates the spacious vertical gaps between sections */
+    gap: 100px;
     text-align: center;
 }
 
-/* Individual Content Category Blocks */
 .newsletter-block {
     display: flex;
     flex-direction: column;
@@ -505,7 +454,6 @@ body {
     justify-content: center;
 }
 
-/* Clean dark grey typography for main category markers */
 .newsletter-heading {
     color: #2c3033;
     font-size: 26px;
@@ -519,7 +467,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Subtext lines styled in soft slate grey */
 .newsletter-subtext {
     color: #7a828a;
     font-size: 13.5px;
@@ -538,33 +485,19 @@ body {
     margin-left: 2px;
 }
 
-/* Mobile adjustments to bring sections slightly closer together on small viewports */
-@media (max-width: 768px) {
-    .newsletter-container {
-        margin: 50px auto;
-        gap: 70px;
-    }
-    .newsletter-heading {
-        font-size: 22px;
-    }
-    .newsletter-subtext {
-        font-size: 12.5px;
-    }
-}
-/* --- Careers Page Layout Components --- */
 
-/* Full Viewport background image configuration */
+/* ==========================================================================
+   7. CAREERS PAGE COMPONENTS
+   ========================================================================== */
 .careers-hero {
     height: 100vh;
     margin-top: 0;
     position: relative;
-    /* Replace with your local office photo asset source path */
     background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920') no-repeat center center/cover;
     display: flex;
     align-items: center;
 }
 
-/* Subtle dark lens filter over the background image to protect light text readability */
 .careers-overlay {
     position: absolute;
     top: 0;
@@ -575,7 +508,6 @@ body {
     z-index: 1;
 }
 
-/* Structural flex container to shift text box to the right side of the screen */
 .careers-content-wrapper {
     position: relative;
     z-index: 5;
@@ -584,19 +516,17 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
-    justify-content: flex-end; /* Pushes content right */
+    justify-content: flex-end; /* Pushes content block card to the right side */
 }
 
-/* Right-aligned text card settings */
 .careers-text-box {
     max-width: 550px;
-    text-align: right; /* Aligns paragraph text to the right border */
+    text-align: right;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Aligns the button element to the right */
+    align-items: flex-end;
 }
 
-/* Title configuration */
 .careers-title {
     color: #ffffff;
     font-size: 20px;
@@ -606,12 +536,10 @@ body {
     margin-bottom: 20px;
 }
 
-/* Golden/Yellow brand accent text */
 .highlight-yellow {
     color: #cca462;
 }
 
-/* Body description paragraph layout */
 .careers-description {
     color: #ffffff;
     font-size: 13px;
@@ -621,11 +549,10 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* The solid corporate Action Button style */
 .cta-button {
     display: inline-block;
-    background-color: #cca462; /* Brand gold/tan color */
-    color: #12161a; /* Dark text matching header navbar */
+    background-color: #cca462;
+    color: #12161a;
     text-decoration: none;
     padding: 10px 28px;
     font-size: 13px;
@@ -636,65 +563,36 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Smooth hover transition mechanics */
 .cta-button:hover {
     background-color: #bfa054;
     transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* Media Breakpoint query managing mobile/tablet orientation displays */
-@media (max-width: 768px) {
-    .careers-hero {
-        padding-top: 80px;
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .careers-content-wrapper {
-        justify-content: center; /* Centers layout card fields on standard mobile viewports */
-        padding: 40px 20px;
-    }
-    
-    .careers-text-box {
-        text-align: center;
-        align-items: center;
-    }
-    
-    .careers-title {
-        font-size: 18px;
-    }
-    
-    .careers-description {
-        font-size: 12.5px;
-    }
-}
-/* --- Contact Us Page Layout Components --- */
 
-/* Full Viewport background image layout setup */
+/* ==========================================================================
+   8. CONTACT US PAGE COMPONENTS
+   ========================================================================== */
 .contact-hero {
     height: 100vh;
     margin-top: 0;
     position: relative;
-    /* Replace with your specific high-res local image asset path */
     background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Semi-transparent screen mask overlay */
 .contact-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* Protects text contrast over images */
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
-/* Three-Column Workspace Layout Grid */
 .contact-content-grid {
     position: relative;
     z-index: 5;
@@ -703,22 +601,20 @@ body {
     margin: 0 auto;
     padding: 60px 30px 0 30px;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.2fr; /* Centers the narrow form between wider descriptions */
+    grid-template-columns: 1.2fr 1fr 1.2fr;
     gap: 40px;
     align-items: center;
 }
 
-/* Base side configurations */
 .contact-side-info {
     color: #ffffff;
 }
 
-/* Left Informational Column text adjustments */
 .contact-side-info.left-side h2 {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 12px;
-    color: #cca462; /* Soft corporate gold text accent */
+    color: #cca462;
 }
 
 .contact-side-info.left-side p {
@@ -728,7 +624,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Embedded Map Window dimensions frame */
 .map-embed-frame {
     width: 100%;
     height: 160px;
@@ -737,9 +632,9 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Center Form Layout Card Frame */
+/* Center Interactive Contact Form Card */
 .contact-form-wrapper {
-    background-color: rgba(229, 213, 186, 0.85); /* Semitransparent warm gold/beige card background */
+    background-color: rgba(229, 213, 186, 0.85); /* Semi-transparent warm gold background */
     padding: 30px 25px;
     border-radius: 2px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -754,7 +649,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Form Input Element Boxes */
 .interactive-form {
     display: flex;
     flex-direction: column;
@@ -779,9 +673,8 @@ body {
     background-color: #ffffff;
 }
 
-/* Form Submission Action Button Styling */
 .form-submit-btn {
-    background-color: #12161a; /* Dark background matching the header menu styles */
+    background-color: #12161a;
     color: #ffffff;
     border: none;
     padding: 12px;
@@ -798,9 +691,8 @@ body {
     background-color: #242b33;
 }
 
-/* Right Side Column Text layouts */
 .contact-side-info.right-side {
-    text-align: right; /* Aligned along right border margin matching image source */
+    text-align: right;
 }
 
 .callout-title {
@@ -818,105 +710,101 @@ body {
     line-height: 1.6;
 }
 
-/* Media Breakpoints managing small layout viewports */
+
+/* ==========================================================================
+   9. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet Viewports & Below */
 @media (max-width: 992px) {
     .contact-hero {
         height: auto;
         min-height: 100vh;
         padding: 100px 0 50px 0;
     }
-    
     .contact-content-grid {
-        grid-template-columns: 1fr; /* Shifts into unified layout single column vertical stack flow */
+        grid-template-columns: 1fr;
         gap: 40px;
     }
-    
     .contact-side-info.right-side {
-        text-align: left; /* Normalizes layout tracking to traditional left orientation on devices */
+        text-align: left;
     }
-    
     .contact-form-wrapper {
         max-width: 500px;
         margin: 0 auto;
         width: 100%;
     }
-}
-/* Logo Graphic Layout Alignment */
-.logo-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-link {
-    display: block;
-    line-height: 0; /* Prevents ghost padding underneath the image block */
-}
-
-.brand-logo-img {
-    /* Height controls how big the logo sits inside your fixed 64px header */
-    height: 40px; 
-    width: auto; /* Keeps your logo's original width proportions perfectly intact */
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-/* Optional subtle hover effect for a premium feel */
-.logo-link:hover .brand-logo-img {
-    transform: scale(1.03);
-}
-
-/* Mobile Tweak: Keeps the logo proportioned perfectly on smaller viewports */
-@media (max-width: 768px) {
-    .brand-logo-img {
-        height: 35px; /* Slightly shrinks the image on mobile so the header feels balanced */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .service-title {
+        height: auto;
+        margin-bottom: 12px;
     }
 }
-/* Hero Section with the New Desk Background */
-.hero-section {
-    height: 100vh;
-    position: relative;
-    
-    /* Points directly to your new file name inside your assets folder */
-    background: url('images/homepage.avif') no-repeat center center/cover;
-    
-    display: flex;
-    align-items: center;
-    padding-left: 8%;
-    margin-top: 0;
-}
 
-/* Subtle dark gradient overlay to help light text pop without ruining the image */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%); 
-    z-index: 1;
-}
-
-/* Main typography layout on the hero image */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-}
-
-.hero-title {
-    font-size: 36px;
-    color: #cca462; /* Using the matching brand gold/tan accent */
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.hero-tagline {
-    font-size: 20px;
-    color: #ffffff; /* Clean white contrast */
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.4;
+/* Mobile Handset Viewports */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-menu ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .brand-logo-img {
+        height: 35px; /* Safely balances logo scaling down on mobile screens */
+    }
+    .hero-section {
+        padding-left: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    .pillars-header {
+        display: none;
+    }
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .pillar-card h4 {
+        height: auto;
+    }
+    .executives-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .newsletter-container {
+        margin: 50px auto;
+        gap: 70px;
+    }
+    .newsletter-heading {
+        font-size: 22px;
+    }
+    .newsletter-subtext {
+        font-size: 12.5px;
+    }
+    .careers-hero {
+        padding-top: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+    .careers-content-wrapper {
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    .careers-text-box {
+        text-align: center;
+        align-items: center;
+    }
+    .careers-title {
+        font-size: 18px;
+    }
+    .careers-description {
+        font-size: 12.5px;
+    }
 }
