@@ -878,7 +878,7 @@ body {
     position: relative;
     
     /* Points directly to your new file name inside your assets folder */
-    background: url('homepage.avif') no-repeat center center/cover;
+    background: url('images/homepage.avif') no-repeat center center/cover;
     
     display: flex;
     align-items: center;
