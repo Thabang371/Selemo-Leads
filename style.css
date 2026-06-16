@@ -841,3 +841,34 @@ body {
         width: 100%;
     }
 }
+/* Logo Graphic Layout Alignment */
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-link {
+    display: block;
+    line-height: 0; /* Prevents ghost padding underneath the image block */
+}
+
+.brand-logo-img {
+    /* Height controls how big the logo sits inside your fixed 64px header */
+    height: 40px; 
+    width: auto; /* Keeps your logo's original width proportions perfectly intact */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Optional subtle hover effect for a premium feel */
+.logo-link:hover .brand-logo-img {
+    transform: scale(1.03);
+}
+
+/* Mobile Tweak: Keeps the logo proportioned perfectly on smaller viewports */
+@media (max-width: 768px) {
+    .brand-logo-img {
+        height: 35px; /* Slightly shrinks the image on mobile so the header feels balanced */
+    }
+}
