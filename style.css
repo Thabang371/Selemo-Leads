@@ -872,3 +872,51 @@ body {
         height: 35px; /* Slightly shrinks the image on mobile so the header feels balanced */
     }
 }
+/* Hero Section with the New Desk Background */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    
+    /* Points directly to your new file name inside your assets folder */
+    background: url('homepage.avif') no-repeat center center/cover;
+    
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    margin-top: 0;
+}
+
+/* Subtle dark gradient overlay to help light text pop without ruining the image */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%); 
+    z-index: 1;
+}
+
+/* Main typography layout on the hero image */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 36px;
+    color: #cca462; /* Using the matching brand gold/tan accent */
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-tagline {
+    font-size: 20px;
+    color: #ffffff; /* Clean white contrast */
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+}
