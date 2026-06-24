@@ -18,7 +18,7 @@ body {
    2. FIXED NAVIGATION HEADER (ALL PAGES)
    ========================================================================== */
 .main-header {
-    background-color: #12161a; /* Sleek, very dark blue/grey */
+    background-color: #12161a;
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -32,32 +32,27 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Securely pushes logo to left, menu to right */
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px; /* Gives padding so text doesn't cut off on screen edges */
 }
 
 /* Image Logo Area Elements */
 .logo-area {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .logo-link {
     display: block;
-    line-height: 0; /* Prevents ghost padding underneath image */
+    line-height: 0;
 }
 
 .brand-logo-img {
     height: 40px; 
-    width: auto; /* Maintains original proportions */
+    width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
-}
-
-.logo-link:hover .brand-logo-img {
-    transform: scale(1.03);
 }
 
 /* Navigation Menu Links */
@@ -68,20 +63,19 @@ body {
 }
 
 .nav-menu a {
-    color: #b0b5b9; /* Soft grey text */
+    color: #b0b5b9;
     text-decoration: none;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;
     transition: color 0.3s ease;
+    white-space: nowrap; /* Prevents long text like CONTACT US from breaking into two lines */
 }
 
 .nav-menu a:hover, 
 .nav-menu a.active {
-    color: #e57c35; /* Highlights active/hover state in brand orange */
+    color: #e57c35; 
 }
-
-
 /* ==========================================================================
    3. INDEX / HOME PAGE HERO SECTION
    ========================================================================== */
