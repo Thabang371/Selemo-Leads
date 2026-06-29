@@ -802,3 +802,100 @@ body {
         font-size: 12.5px;
     }
 }
+/* ==========================================================================
+   10. OFFERS SUB-PAGE COMPONENTS
+   ========================================================================== */
+.offers-banner {
+    margin-top: 60px;
+    height: 260px;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.offers-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.offers-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.offers-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.offers-container {
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 0 30px;
+    background-color: #ffffff;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-title {
+    color: #cca462; 
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    height: 42px;
+}
+
+.offer-image-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.offer-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-description {
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Responsive updates for mobile views */
+@media (max-width: 992px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .offer-title {
+        height: auto;
+        margin-bottom: 12px;
+    }
+}
