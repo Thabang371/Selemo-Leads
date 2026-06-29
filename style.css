@@ -943,3 +943,18 @@ body {
     border-color: #cca462;
     color: #ffffff;
 }
+.hero-banner {
+    width: 100%;
+    height: 60vh; /* Takes up exactly 60% of the visitor's screen height */
+    position: relative;
+    background: url('images/homepage.avif') no-repeat center center;
+    background-size: cover; /* Keeps it full bleed */
+}
+
+/* Adjust position dynamically for crisp focus on the branded mug and elements */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 40vh; /* Brings down scale cleanly for mobile view layouts */
+        background-position: 65% center; /* Shifts the alignment slightly to keep the Selemo mug centered on mobile */
+    }
+}
