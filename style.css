@@ -899,3 +899,47 @@ body {
         margin-bottom: 12px;
     }
 }
+/* Interactive Selectable Offer Cards */
+.offer-card.selectable {
+    cursor: pointer;
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 6px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state styling */
+.offer-card.selectable:hover {
+    transform: translateY(-5px);
+    border-color: #cca462; /* Changes border to your theme gold on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Action button area inside the card */
+.offer-action {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.select-btn {
+    background-color: transparent;
+    color: #12161a;
+    border: 2px solid #12161a;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Button style changes when hovering anywhere over the card */
+.offer-card.selectable:hover .select-btn {
+    background-color: #cca462;
+    border-color: #cca462;
+    color: #ffffff;
+}
