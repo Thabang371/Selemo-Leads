@@ -18,7 +18,7 @@ body {
    2. FIXED NAVIGATION HEADER (ALL PAGES)
    ========================================================================== */
 .main-header {
-    background-color: #12161a;
+    background-color: #12161a; /* Enforces a solid, clean dark background */
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -32,9 +32,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Securely pushes logo to left, menu to right */
+    justify-content: space-between; /* Securely balances logo on left, links on right */
     align-items: center;
-    padding: 0 30px; /* Gives padding so text doesn't cut off on screen edges */
+    padding: 0 40px; /* Adds breathing room so text doesn't cut off on the edges */
 }
 
 /* Image Logo Area Elements */
@@ -76,21 +76,24 @@ body {
 .nav-menu a.active {
     color: #e57c35; 
 }
+
+
 /* ==========================================================================
-   HOMEPAGE HERO BANNER FIX (OPTION 2)
+   3. HOMEPAGE HERO BANNER (OPTION 2 - LEFT ALIGNED)
    ========================================================================== */
 .hero-banner {
     width: 100%;
     height: 65vh; /* Takes up exactly 65% of the browser's viewport height */
+    margin-top: 70px; /* Prevents the fixed header from hiding the top of the image */
     position: relative;
     background: url('images/homepage.avif') no-repeat center center;
     background-size: cover; /* Keeps the background full-bleed across all screen widths */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Pushes content block away from centered mug to the left */
 }
 
-/* Clear overlay to keep overlay text readable over the background elements */
+/* Clear overlay to keep text highly legible over the background assets */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -104,18 +107,21 @@ body {
 .hero-content {
     position: relative;
     z-index: 2; /* Sits cleanly on top of the image overlay */
-    text-align: center;
+    text-align: left; /* Aligns headline paragraphs cleanly */
     color: #ffffff;
-    padding: 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px; /* Perfectly balances text over the empty space next to the pen and notebook */
 }
 
-/* Media Query: Re-centers the branded elements perfectly on mobile screens */
-@media (max-width: 768px) {
-    .hero-banner {
-        height: 45vh; /* Comfortably shrinks vertical height for standard smartphones */
-        background-position: 65% center; /* Shifts focus to keep your primary desk assets centered */
-    }
+/* Adds depth to white text layers */
+.hero-content h1, 
+.hero-content p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
+
 /* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
@@ -229,7 +235,7 @@ body {
     letter-spacing: 0.5px;
     margin-bottom: 12px;
     line-height: 1.4;
-    height: 36px; /* Symmetrical alignment check */
+    height: 36px;
 }
 
 .pillar-card p {
@@ -618,7 +624,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Center Interactive Contact Form Card */
+/* Center Contact Form Card */
 .contact-form-wrapper {
     background-color: rgba(229, 213, 186, 0.85); /* Semi-transparent warm gold background */
     padding: 30px 25px;
@@ -698,104 +704,7 @@ body {
 
 
 /* ==========================================================================
-   9. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
-   ========================================================================== */
-
-/* Tablet Viewports & Below */
-@media (max-width: 992px) {
-    .contact-hero {
-        height: auto;
-        min-height: 100vh;
-        padding: 100px 0 50px 0;
-    }
-    .contact-content-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .contact-side-info.right-side {
-        text-align: left;
-    }
-    .contact-form-wrapper {
-        max-width: 500px;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .service-title {
-        height: auto;
-        margin-bottom: 12px;
-    }
-}
-
-/* Mobile Handset Viewports */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-menu ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .brand-logo-img {
-        height: 35px; /* Safely balances logo scaling down on mobile screens */
-    }
-    .hero-section {
-        padding-left: 20px;
-        justify-content: center;
-        text-align: center;
-    }
-    .pillars-header {
-        display: none;
-    }
-    .pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-    .pillar-card h4 {
-        height: auto;
-    }
-    .executives-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    .newsletter-container {
-        margin: 50px auto;
-        gap: 70px;
-    }
-    .newsletter-heading {
-        font-size: 22px;
-    }
-    .newsletter-subtext {
-        font-size: 12.5px;
-    }
-    .careers-hero {
-        padding-top: 80px;
-        height: auto;
-        min-height: 100vh;
-    }
-    .careers-content-wrapper {
-        justify-content: center;
-        padding: 40px 20px;
-    }
-    .careers-text-box {
-        text-align: center;
-        align-items: center;
-    }
-    .careers-title {
-        font-size: 18px;
-    }
-    .careers-description {
-        font-size: 12.5px;
-    }
-}
-/* ==========================================================================
-   10. OFFERS SUB-PAGE COMPONENTS
+   9. OFFERS SUB-PAGE COMPONENTS (INTERACTIVE)
    ========================================================================== */
 .offers-banner {
     margin-top: 60px;
@@ -880,18 +789,7 @@ body {
     text-align: justify;
 }
 
-/* Responsive updates for mobile views */
-@media (max-width: 992px) {
-    .offers-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .offer-title {
-        height: auto;
-        margin-bottom: 12px;
-    }
-}
-/* Interactive Selectable Offer Cards */
+/* Interactive Selectable State Extensions */
 .offer-card.selectable {
     cursor: pointer;
     border: 1px solid #e1e1e1;
@@ -901,14 +799,12 @@ body {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover state styling */
 .offer-card.selectable:hover {
     transform: translateY(-5px);
-    border-color: #cca462; /* Changes border to your theme gold on hover */
+    border-color: #cca462;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Action button area inside the card */
 .offer-action {
     margin-top: 20px;
     text-align: center;
@@ -929,24 +825,113 @@ body {
     border-radius: 4px;
 }
 
-/* Button style changes when hovering anywhere over the card */
 .offer-card.selectable:hover .select-btn {
     background-color: #cca462;
     border-color: #cca462;
     color: #ffffff;
 }
-.hero-banner {
-    width: 100%;
-    height: 60vh; /* Takes up exactly 60% of the visitor's screen height */
-    position: relative;
-    background: url('images/homepage.avif') no-repeat center center;
-    background-size: cover; /* Keeps it full bleed */
+
+
+/* ==========================================================================
+   10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet Viewports & Below */
+@media (max-width: 992px) {
+    .contact-hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 50px 0;
+    }
+    .contact-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .contact-side-info.right-side {
+        text-align: left;
+    }
+    .contact-form-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .services-grid,
+    .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .service-title,
+    .offer-title {
+        height: auto;
+        margin-bottom: 12px;
+    }
 }
 
-/* Adjust position dynamically for crisp focus on the branded mug and elements */
+/* Mobile Handset Viewports */
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-menu ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .brand-logo-img {
+        height: 35px;
+    }
     .hero-banner {
-        height: 40vh; /* Brings down scale cleanly for mobile view layouts */
-        background-position: 65% center; /* Shifts the alignment slightly to keep the Selemo mug centered on mobile */
+        height: 45vh; /* Comfortably shrinks vertical height for standard smartphones */
+        background-position: 65% center; /* Shifts focus to keep your primary desk assets centered */
+        justify-content: center;
+    }
+    .hero-content {
+        text-align: center;
+        padding: 0 20px;
+    }
+    .pillars-header {
+        display: none;
+    }
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .pillar-card h4 {
+        height: auto;
+    }
+    .executives-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .newsletter-container {
+        margin: 50px auto;
+        gap: 70px;
+    }
+    .newsletter-heading {
+        font-size: 22px;
+    }
+    .newsletter-subtext {
+        font-size: 12.5px;
+    }
+    .careers-hero {
+        padding-top: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+    .careers-content-wrapper {
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    .careers-text-box {
+        text-align: center;
+        align-items: center;
+    }
+    .careers-title {
+        font-size: 18px;
+    }
+    .careers-description {
+        font-size: 12.5px;
     }
 }
