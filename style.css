@@ -859,7 +859,7 @@ body {
     background-color: #fafafa;
 }
 /* ==========================================================================
-   10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
+   10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS (CLEANED & FIXED)
    ========================================================================== */
 
 /* Tablet Viewports & Below */
@@ -893,29 +893,118 @@ body {
     }
 }
 
-/* Mobile Handset Viewports */
+/* Desktop Default Hamburger Hide Rule */
+.hamburger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+/* Unified Mobile Handset Viewport Breakpoint (768px and below) */
 @media (max-width: 768px) {
+    
+    /* HEADER & BRANDING FIXES */
     .header-container {
-        flex-direction: column;
-        gap: 15px;
+        position: relative; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
     }
-    .nav-menu ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
     .brand-logo-img {
         height: 35px;
     }
+
+    /* HAMBURGER ICON COLOR FIX (Made highly visible against dark background) */
+    .hamburger-btn {
+        display: block !important; 
+    }
+
+    .hamburger-btn .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff !important; /* Changed to white so it stands out on black */
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* MOBILE NAVIGATION SYSTEM (Hidden behind dropdown by default) */
+    .nav-menu {
+        display: none !important; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #12161a !important; /* Solid dark background matching your brand */
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 3px solid #e57c35; /* Orange accent line */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    /* Force mobile items to list vertically (overriding horizontal wrapper) */
+    .nav-menu ul {
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        display: block !important;
+        padding: 15px 25px !important;
+        width: 100%;
+        color: #ffffff !important;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        white-space: normal;
+    }
+
+    /* Activated State (Triggered by your JS class) */
+    .nav-menu.mobile-active {
+        display: block !important;
+    }
+
+    /* Hamburger Transformation into an 'X' */
+    .hamburger-btn.open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-btn.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* HERO LAYOUT ADJUSTMENTS */
     .hero-banner {
-        height: 45vh; /* Comfortably shrinks vertical height for standard smartphones */
-        background-position: 65% center; /* Shifts focus to keep your primary desk assets centered */
+        height: 60vh; 
+        background-position: center center; 
         justify-content: center;
     }
+
     .hero-content {
         text-align: center;
         padding: 0 20px;
     }
+
+    .hero-content h1, 
+    .hero-content p {
+        max-width: 100%; /* Allows heading boxes to breathe naturally on small viewports */
+    }
+
+    /* GENERAL INTERIOR COMPONENTS */
     .pillars-header {
         display: none;
     }
@@ -941,144 +1030,38 @@ body {
     .newsletter-subtext {
         font-size: 12.5px;
     }
+
+    /* HOMEPAGE IMAGE/OVERLAY CONTROLS */
     .careers-hero {
         padding-top: 80px;
         height: auto;
         min-height: 100vh;
-    }
-    .careers-content-wrapper {
-        justify-content: center;
-        padding: 40px 20px;
-    }
-    .careers-text-box {
-        text-align: center;
-        align-items: center;
-    }
-    .careers-title {
-        font-size: 18px;
-    }
-    .careers-description {
-        font-size: 12.5px;
-    }
-}
-/* --- Desktop Default Layout Styling --- */
-.hamburger-btn {
-    display: none; /* Hidden by default on desktop computers */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger-btn .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #12161a; /* Matches your brand tone */
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
-}
-
-/* --- Mobile Breakpoint (768px and below) --- */
-@media (max-width: 768px) {
-    .header-container {
-        position: relative; /* Context positioning for absolute menu layout */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .hamburger-btn {
-        display: block; /* Reveals the navigation button */
-    }
-
-    /* Transform navigation block into a hidden vertical list on mobile screen sizes */
-    .nav-menu {
-        display: none; 
-        position: absolute;
-        top: 100%; /* Sits cleanly directly under the header bar */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        border-top: 1px solid #e1e1e1;
-        border-bottom: 2px solid #12161a;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-
-    /* Re-orient flex architecture dynamically */
-    .nav-menu ul {
-        flex-direction: column;
-        display: flex;
-        padding: 10px 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    .nav-menu ul li a {
-        display: block;
-        padding: 15px 25px;
-        width: 100%;
-        box-sizing: border-box;
-        border-bottom: 1px solid #f5f5f5;
-    }
-
-    /* Class used by JavaScript to toggle drop menu visiblity */
-    .nav-menu.mobile-active {
-        display: block;
-    }
-
-    /* Turning the hamburger bars into an 'X' symbol when open */
-    .hamburger-btn.open .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-btn.open .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-btn.open .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-@media (max-width: 768px) {
-    /* 1. Fix the Hero Container Background */
-    .careers-hero {
-        background-position: center center !important; /* Centers the mug/plant image */
-        background-size: cover !important;             /* Scales perfectly without stretching */
-        min-height: 80vh !important;                   /* Gives the section breathing room on mobile */
+        background-position: center center !important;
+        background-size: cover !important;
         position: relative !important;
     }
-
-    /* 2. Darken the Overlay to make the white text pop */
     .careers-overlay {
-        background: rgba(0, 0, 0, 0.65) !important; /* Adds a clean, dark tint over the image */
+        background: rgba(0, 0, 0, 0.65) !important;
         position: absolute !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0; width: 100%; height: 100%;
         z-index: 1;
     }
-
-    /* 3. Widen the Text Wrapper so it doesn't look squished */
     .careers-content-wrapper {
         position: relative !important;
-        z-index: 2; /* Sits on top of the dark overlay */
-        width: 100% !important;
-        padding: 0 20px !important; /* Prevents text from hitting the very edges of the screen */
+        z-index: 2;
+        justify-content: center;
+        padding: 40px 20px;
         box-sizing: border-box !important;
     }
-
-    /* 4. Align and scale your typography */
     .careers-text-box {
         text-align: center !important;
+        align-items: center;
         max-width: 100% !important;
     }
-
     .careers-title {
-        font-size: 24px !important; /* Makes the heading fit beautifully on a mobile screen */
+        font-size: 24px !important;
         line-height: 1.3 !important;
     }
-
     .careers-description {
         font-size: 14px !important;
         line-height: 1.6 !important;
