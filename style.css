@@ -1039,3 +1039,49 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+@media (max-width: 768px) {
+    /* 1. Fix the Hero Container Background */
+    .careers-hero {
+        background-position: center center !important; /* Centers the mug/plant image */
+        background-size: cover !important;             /* Scales perfectly without stretching */
+        min-height: 80vh !important;                   /* Gives the section breathing room on mobile */
+        position: relative !important;
+    }
+
+    /* 2. Darken the Overlay to make the white text pop */
+    .careers-overlay {
+        background: rgba(0, 0, 0, 0.65) !important; /* Adds a clean, dark tint over the image */
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    /* 3. Widen the Text Wrapper so it doesn't look squished */
+    .careers-content-wrapper {
+        position: relative !important;
+        z-index: 2; /* Sits on top of the dark overlay */
+        width: 100% !important;
+        padding: 0 20px !important; /* Prevents text from hitting the very edges of the screen */
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Align and scale your typography */
+    .careers-text-box {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+
+    .careers-title {
+        font-size: 24px !important; /* Makes the heading fit beautifully on a mobile screen */
+        line-height: 1.3 !important;
+    }
+
+    .careers-description {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-top: 15px !important;
+    }
+}
