@@ -77,9 +77,8 @@ body {
     color: #e57c35; 
 }
 
-
 /* ==========================================================================
-   3. HOMEPAGE HERO BANNER (OPTION 2 - LEFT ALIGNED)
+   3. HOMEPAGE HERO BANNER (OPTION 1 - PERFECTLY CENTERED)
    ========================================================================== */
 .hero-banner {
     width: 100%;
@@ -90,36 +89,37 @@ body {
     background-size: cover; /* Keeps the background full-bleed across all screen widths */
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Pushes content block away from centered mug to the left */
+    justify-content: center; /* Centers the content container horizontally */
 }
 
-/* Clear overlay to keep text highly legible over the background assets */
+/* Enhanced overlay tint to ensure maximum text readability over the desk items */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Smooth dark tint */
+    background: rgba(0, 0, 0, 0.45); /* Balanced dark tint */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2; /* Sits cleanly on top of the image overlay */
-    text-align: left; /* Aligns headline paragraphs cleanly */
+    text-align: center; /* Centers the headline and slogan beautifully */
     color: #ffffff;
-    max-width: 1200px;
+    max-width: 800px; /* Constrains text width to sit perfectly between assets */
     width: 100%;
-    margin: 0 auto;
-    padding: 0 60px; /* Perfectly balances text over the empty space next to the pen and notebook */
+    padding: 0 20px;
 }
 
-/* Adds depth to white text layers */
+/* Subtle text-shadow for a premium, crisp look over variable image highlights */
 .hero-content h1, 
 .hero-content p {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
+
+
 
 
 /* ==========================================================================
