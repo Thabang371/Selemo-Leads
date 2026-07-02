@@ -39,10 +39,11 @@
         </div>
     </div>
 
-  <main class="offers-container">
+<main class="offers-container">
     <section class="offers-grid">
         
-        <div class="offer-card selectable">
+        <!-- Card 1 -->
+        <div class="offer-card selectable" data-offer="HUSH Performance Management System (PMS)">
             <h2 class="offer-title">HUSH Performance Management System (PMS)</h2>
             <div class="offer-image-box">
                 <img src="images/performance-management.jpg" alt="HUSH PMS Platform Overview">
@@ -55,7 +56,8 @@
             </div>
         </div>
 
-        <div class="offer-card selectable">
+        <!-- Card 2 -->
+        <div class="offer-card selectable" data-offer="HUSH Time & Attendance Management System">
             <h2 class="offer-title">HUSH Time & Attendance Management System</h2>
             <div class="offer-image-box">
                 <img src="images/time-attendance.jpg" alt="Workforce Management Platform">
@@ -68,7 +70,8 @@
             </div>
         </div>
 
-        <div class="offer-card selectable">
+        <!-- Card 3 -->
+        <div class="offer-card selectable" data-offer="Tlhompho Burial Policy">
             <h2 class="offer-title">Tlhompho Burial Policy</h2>
             <div class="offer-image-box">
                 <img src="images/IMG-20260624-WA0005.jpg" alt="Tlhompho Burial Policy">
@@ -81,6 +84,31 @@
             </div>
         </div>
 
+    </section>
+
+    ---
+
+    <!-- Professional Inquiry Form Section -->
+    <section id="inquiry-section" style="margin-top: 80px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="contact-form-wrapper">
+            <h3>Product Inquiry Form</h3>
+            <form class="interactive-form">
+                <div class="form-group">
+                    <input type="text" id="form-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <input type="email" id="form-email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <!-- The JavaScript targets this ID specifically to auto-populate the chosen system -->
+                    <input type="text" id="form-subject" placeholder="Select an offer above..." readonly style="background-color: #eaeaea; font-weight: 600; color: #12161a;">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <textarea id="form-message" rows="5" placeholder="Tell us more about your company's requirements..."></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn" style="margin-top: 20px; width: 100%;">Send Inquiry</button>
+            </form>
+        </div>
     </section>
 </main>
 
