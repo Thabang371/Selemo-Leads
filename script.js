@@ -140,3 +140,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// ==========================================================================
+    // GLOBAL HEADER NAVIGATION MOBILE DROPDOWN TOGGLE
+    // ==========================================================================
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNavMenu = document.getElementById('main-nav-menu');
+
+    if (menuToggle && mainNavMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents instant context resets if clicked directly
+            mainNavMenu.classList.toggle('mobile-active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Close the mobile drop down menu if an user clicks outside the window framework
+        document.addEventListener('click', (e) => {
+            if (!mainNavMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mainNavMenu.classList.remove('mobile-active');
+                menuToggle.classList.remove('open');
+            }
+        });
+    }
