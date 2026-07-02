@@ -76,9 +76,8 @@ body {
 .nav-menu a.active {
     color: #e57c35; 
 }
-
 /* ==========================================================================
-   3. HOMEPAGE HERO BANNER (OPTION 1 - PERFECTLY CENTERED)
+   3. HOMEPAGE HERO BANNER (CONSTRAINED LEFT ALIGNMENT)
    ========================================================================== */
 .hero-banner {
     width: 100%;
@@ -89,39 +88,48 @@ body {
     background-size: cover; /* Keeps the background full-bleed across all screen widths */
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers the content container horizontally */
+    justify-content: flex-start; /* Aligns the content block to the left side */
 }
 
-/* Enhanced overlay tint to ensure maximum text readability over the desk items */
+/* Clear overlay to keep text highly legible over the background assets */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45); /* Balanced dark tint */
+    background: rgba(0, 0, 0, 0.25); /* Lighter tint since text is now over the clean desk area */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2; /* Sits cleanly on top of the image overlay */
-    text-align: center; /* Centers the headline and slogan beautifully */
+    text-align: left; 
     color: #ffffff;
-    max-width: 800px; /* Constrains text width to sit perfectly between assets */
+    max-width: 1200px;
     width: 100%;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 0 80px; /* Generous side padding to push text in from the screen edge */
 }
 
-/* Subtle text-shadow for a premium, crisp look over variable image highlights */
-.hero-content h1, 
+/* This outer wrapper forces the headings to stay small and clear of the mug */
+.hero-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    max-width: 320px; /* Strictly boxes the title so it cannot stretch toward the mug */
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 .hero-content p {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-style: italic;
+    max-width: 300px; /* Keeps the tagline perfectly aligned under the title */
+    color: #e0e0e0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-
-
-
 /* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
