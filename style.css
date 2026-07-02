@@ -961,3 +961,81 @@ body {
         font-size: 12.5px;
     }
 }
+/* --- Desktop Default Layout Styling --- */
+.hamburger-btn {
+    display: none; /* Hidden by default on desktop computers */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-btn .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #12161a; /* Matches your brand tone */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Mobile Breakpoint (768px and below) --- */
+@media (max-width: 768px) {
+    .header-container {
+        position: relative; /* Context positioning for absolute menu layout */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-btn {
+        display: block; /* Reveals the navigation button */
+    }
+
+    /* Transform navigation block into a hidden vertical list on mobile screen sizes */
+    .nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%; /* Sits cleanly directly under the header bar */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 2px solid #12161a;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* Re-orient flex architecture dynamically */
+    .nav-menu ul {
+        flex-direction: column;
+        display: flex;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 15px 25px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    /* Class used by JavaScript to toggle drop menu visiblity */
+    .nav-menu.mobile-active {
+        display: block;
+    }
+
+    /* Turning the hamburger bars into an 'X' symbol when open */
+    .hamburger-btn.open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-btn.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
