@@ -853,7 +853,11 @@ body {
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(229, 124, 53, 0.3);
 }
-
+/* Add this to your style.css under the Section 9 hover states */
+.offer-card.selectable:active {
+    transform: scale(0.98); /* Gives physical click feedback when tapped */
+    background-color: #fafafa;
+}
 /* ==========================================================================
    10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
    ========================================================================== */
