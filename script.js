@@ -66,3 +66,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const heroBtn = document.getElementById('hero-apply-btn');
+    const jobsSection = document.getElementById('jobs-section');
+    const jobCards = document.querySelectorAll('.job-card');
+    const roleInput = document.getElementById('app-role');
+    const appSection = document.getElementById('application-section');
+    const appForm = document.getElementById('jobApplicationForm');
+
+    // 1. Smooth scroll from Hero Section Button to Openings
+    if (heroBtn && jobsSection) {
+        heroBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            jobsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // 2. Click Opening -> Auto-Fill Role field & Scroll to Form
+    jobCards.forEach(card => {
+        const applyBtn = card.querySelector('.apply-btn');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', () => {
+                const targetJob = card.getAttribute('data-job');
+                if (roleInput) {
+                    roleInput.value = targetJob;
+                }
+                
+                // Highlight choice visually
+                jobCards.forEach(c => c.style.borderColor = '#e1e1e1');
+                card.style.borderColor = '#e57c35';
+
+                if (appSection) {
+                    appSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+    });
+
+    // 3. Compile Data and Launch Native Email Client directly to careers@
+    if (appForm) {
+        appForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!roleInput.value) {
+                alert("Please click 'Select & Apply' on one of our current career openings above before submitting.");
+                return;
+            }
+
+            const name = document.getElementById('app-name').value;
+            const email = document.getElementById('app-email').value;
+            const role = roleInput.value;
+            const resumeLink = document.getElementById('app-resume-link').value || "Not Linked (Will attach manually to email)";
+            const coverNotes = document.getElementById('app-cover').value;
+
+            const targetEmail = "careers@selemoleads.com";
+            const emailSubject = encodeURIComponent(`Job Application: ${role} - ${name}`);
+            
+            const emailBody = encodeURIComponent(
+                `Selemo Leads Direct - Careers Application Info:\n` +
+                `=========================================\n\n` +
+                `Applicant Name: ${name}\n` +
+                `Applicant Contact Email: ${email}\n` +
+                `Target Position: ${role}\n` +
+                `CV / Cloud Portfolio Link: ${resumeLink}\n\n` +
+                `Cover Letter / Executive Summary Notes:\n` +
+                `${coverNotes}\n\n` +
+                `-----------------------------------------\n` +
+                `*Recruitment Reminder to Applicant: Remember to drop your physical PDF CV/Resume onto this email window if you did not supply a cloud sharing link above.*`
+            );
+
+            // Pop open user email workspace
+            window.location.href = `mailto:${targetEmail}?subject=${emailSubject}&body=${emailBody}`;
+        });
+    }
+});
