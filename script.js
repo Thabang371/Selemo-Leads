@@ -1,4 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // ==========================================================================
+    // 1. GLOBAL HEADER NAVIGATION MOBILE DROPDOWN TOGGLE (FIXED)
+    // ==========================================================================
+    const menuToggle = document.getElementById('mobile-menu-toggle') || document.querySelector('.hamburger-btn');
+    const mainNavMenu = document.getElementById('main-nav-menu') || document.querySelector('.nav-menu');
+
+    if (menuToggle && mainNavMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            mainNavMenu.classList.toggle('mobile-active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Close the mobile drop down menu if a user clicks outside the window framework
+        document.addEventListener('click', (e) => {
+            if (!mainNavMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mainNavMenu.classList.remove('mobile-active');
+                menuToggle.classList.remove('open');
+            }
+        });
+
+        // Close menu when clicking individual links
+        const navLinks = mainNavMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNavMenu.classList.remove('mobile-active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    }
+
+
+    // ==========================================================================
+    // 2. OFFERS PAGE COMPONENT LOGIC
+    // ==========================================================================
     const offerCards = document.querySelectorAll('.offer-card.selectable');
     const subjectInput = document.getElementById('form-subject');
     const messageInput = document.getElementById('form-message');
@@ -6,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const inquiryForm = document.getElementById('offerInquiryForm');
     const submitBtn = document.getElementById('submit-btn-text');
 
-    // 1. Handle Card Selection Events
     offerCards.forEach(card => {
         card.addEventListener('click', () => {
             const productName = card.getAttribute('data-offer');
@@ -27,18 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Handle Live Agent Form Dispatch via Formspree
     if (inquiryForm) {
         inquiryForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Stop page from hard reloading
+            e.preventDefault(); 
             
             if (!subjectInput.value) {
                 alert("Please select one of our premium offers above before submitting your inquiry.");
                 return;
             }
 
-            submitBtn.textContent = "SENDING REQUEST...";
-            submitBtn.disabled = true;
+            if (submitBtn) {
+                submitBtn.textContent = "SENDING REQUEST...";
+                submitBtn.disabled = true;
+            }
 
             const formData = new FormData(inquiryForm);
 
@@ -50,8 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    submitBtn.textContent = "REQUEST SENT SUCCESSFULLY!";
-                    submitBtn.style.backgroundColor = "#27ae60"; // Success Green
+                    if (submitBtn) {
+                        submitBtn.textContent = "REQUEST SENT SUCCESSFULLY!";
+                        submitBtn.style.backgroundColor = "#27ae60"; 
+                    }
                     alert(`Thank you! Your request for the ${subjectInput.value} has been routed directly to a Selemo agent. We will contact you shortly.`);
                     inquiryForm.reset();
                     offerCards.forEach(c => c.style.borderColor = '#e1e1e1');
@@ -59,14 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error("Transmission breakdown");
                 }
             } catch (error) {
-                submitBtn.textContent = "SEND INQUIRY";
-                submitBtn.disabled = false;
+                if (submitBtn) {
+                    submitBtn.textContent = "SEND INQUIRY";
+                    submitBtn.disabled = false;
+                }
                 alert("Oops! There was a slight connection problem sending your lead request. Please try again or email us directly.");
             }
         });
     }
-});
-document.addEventListener('DOMContentLoaded', () => {
+
+
+    // ==========================================================================
+    // 3. CAREERS PAGE COMPONENT LOGIC
+    // ==========================================================================
     const heroBtn = document.getElementById('hero-apply-btn');
     const jobsSection = document.getElementById('jobs-section');
     const jobCards = document.querySelectorAll('.job-card');
@@ -74,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const appSection = document.getElementById('application-section');
     const appForm = document.getElementById('jobApplicationForm');
 
-    // 1. Smooth scroll from Hero Section Button to Openings
     if (heroBtn && jobsSection) {
         heroBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -82,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Click Opening -> Auto-Fill Role field & Scroll to Form
     jobCards.forEach(card => {
         const applyBtn = card.querySelector('.apply-btn');
         if (applyBtn) {
@@ -92,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     roleInput.value = targetJob;
                 }
                 
-                // Highlight choice visually
                 jobCards.forEach(c => c.style.borderColor = '#e1e1e1');
                 card.style.borderColor = '#e57c35';
 
@@ -103,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Compile Data and Launch Native Email Client directly to careers@
     if (appForm) {
         appForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -135,29 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `*Recruitment Reminder to Applicant: Remember to drop your physical PDF CV/Resume onto this email window if you did not supply a cloud sharing link above.*`
             );
 
-            // Pop open user email workspace
             window.location.href = `mailto:${targetEmail}?subject=${emailSubject}&body=${emailBody}`;
         });
     }
 });
-// ==========================================================================
-    // GLOBAL HEADER NAVIGATION MOBILE DROPDOWN TOGGLE
-    // ==========================================================================
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNavMenu = document.getElementById('main-nav-menu');
-
-    if (menuToggle && mainNavMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevents instant context resets if clicked directly
-            mainNavMenu.classList.toggle('mobile-active');
-            menuToggle.classList.toggle('open');
-        });
-
-        // Close the mobile drop down menu if an user clicks outside the window framework
-        document.addEventListener('click', (e) => {
-            if (!mainNavMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                mainNavMenu.classList.remove('mobile-active');
-                menuToggle.classList.remove('open');
-            }
-        });
-    }
