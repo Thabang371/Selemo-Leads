@@ -30,24 +30,81 @@
         </div>
     </header>
 
-    <section class="careers-hero">
-        <div class="careers-overlay"></div>
-        
-        <div class="careers-content-wrapper">
-            <div class="careers-text-box">
-                <h1 class="careers-title">YOUR NEXT CAREER ADVENTURE STARTS <span class="highlight-yellow">HERE!</span></h1>
-                
-                <p class="careers-description">
-                    At Selemo Leads Direct, we're always on the lookout for talented, passionate individuals to join our team. 
-                    We offer a dynamic work environment where innovation, collaboration, and growth are encouraged. 
-                    Whether you're an experienced professional or just starting your career, we provide opportunities for 
-                    development and success. Explore our current openings and discover how you can contribute to our mission.
-                </p>
-                
-                <a href="mailto:careers@selemoleads.com" class="cta-button">Apply Now</a>
-            </div>
+   <!-- 1. Your Existing Hero Section (With updated CTA anchor link) -->
+<section class="careers-hero">
+    <div class="careers-overlay"></div>
+    
+    <div class="careers-content-wrapper">
+        <div class="careers-text-box">
+            <h1 class="careers-title">YOUR NEXT CAREER ADVENTURE STARTS <span class="highlight-yellow">HERE!</span></h1>
+            
+            <p class="careers-description">
+                At Selemo Leads Direct, we're always on the lookout for talented, passionate individuals to join our team. 
+                We offer a dynamic work environment where innovation, collaboration, and growth are encouraged. 
+                Whether you're an experienced professional or just starting your career, we provide opportunities for 
+                development and success. Explore our current openings and discover how you can contribute to our mission.
+            </p>
+            
+            <!-- Changed from a direct mailto link to a smooth scroll link targeting our new jobs section -->
+            <a href="#jobs-section" class="cta-button" id="hero-apply-btn">Explore Openings</a>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- 2. The New Open Positions Section -->
+<section id="jobs-section" style="max-width: 1150px; margin: 80px auto 40px auto; padding: 0 30px;">
+    <h2 style="font-size: 28px; margin-bottom: 30px; color: #12161a; font-family: sans-serif; font-weight: 700;">Current Openings</h2>
+    
+    <div class="jobs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        
+        <!-- Position 1 -->
+        <div class="job-card" data-job="Lead Generation Specialist" style="border: 1px solid #e1e1e1; padding: 25px; border-radius: 6px; background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="font-size: 18px; color: #12161a; margin-bottom: 10px; font-family: sans-serif;">Lead Generation Specialist</h3>
+            <p style="font-size: 14px; color: #666666; margin-bottom: 20px; line-height: 1.5;">Remote / Full-Time • Help businesses scale by identifying high-quality prospects and managing outreach execution strategies.</p>
+            <button class="apply-btn" style="background: #12161a; color: #ffffff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px;">Select & Apply</button>
+        </div>
+
+        <!-- Position 2 -->
+        <div class="job-card" data-job="B2B Sales Consultant" style="border: 1px solid #e1e1e1; padding: 25px; border-radius: 6px; background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="font-size: 18px; color: #12161a; margin-bottom: 10px; font-family: sans-serif;">B2B Sales Consultant</h3>
+            <p style="font-size: 14px; color: #666666; margin-bottom: 20px; line-height: 1.5;">Commission + Base • Engage directly with corporate decision-makers to present and close enterprise-tier software and service agreements.</p>
+            <button class="apply-btn" style="background: #12161a; color: #ffffff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px;">Select & Apply</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- 3. Dynamic Application Form (Sends to careers@selemoleads.com) -->
+<section id="application-section" style="max-width: 600px; margin: 60px auto 100px auto; padding: 0 20px;">
+    <div class="contact-form-wrapper" style="background: #fafafa; padding: 40px; border-radius: 8px; border: 1px solid #e1e1e1;">
+        <h3 style="font-size: 22px; margin-bottom: 20px; color: #12161a; font-family: sans-serif;">Submit Your Application</h3>
+        
+        <form id="jobApplicationForm" class="interactive-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" id="app-name" placeholder="Your Full Name" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="email" id="app-email" placeholder="Your Email Address" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 15px;">
+                <!-- Selected job field filled automatically -->
+                <input type="text" id="app-role" placeholder="Select an available position above..." readonly style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; background-color: #eaeaea; font-weight: 600; color: #12161a; box-sizing: border-box;">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="url" id="app-resume-link" placeholder="Link to Cloud CV (Google Drive, Dropbox, LinkedIn, etc.)" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <textarea id="app-cover" rows="5" placeholder="Tell us why you are a great fit for Selemo Leads..." required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+            </div>
+            
+            <button type="submit" id="app-submit-btn" style="background: #e57c35; color: #ffffff; border: none; padding: 14px; width: 100%; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: background 0.3s;">Open Mail App to Finish Submission</button>
+        </form>
+    </div>
+</section>
 
 </body>
 </html>
