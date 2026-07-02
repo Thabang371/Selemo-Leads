@@ -986,15 +986,20 @@ body {
     }
 
     /* 4. HERO SECTION HEIGHT & OVERLAY FIXES */
+   /* Mobile Hero Fix */
+@media (max-width: 768px) {
     .hero-banner, .careers-hero {
-        height: 70vh !important;
-        min-height: 500px !important;
+        height: 60vh !important;
+        min-height: 400px !important;
         background-position: center center !important;
         background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
     }
+}
 
     /* Darken background overlay so text is readable */
     .hero-overlay, .careers-overlay {
