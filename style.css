@@ -375,23 +375,33 @@ body.about-page {
     letter-spacing: 2px;
 }
 
+body.services-page {
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.88);
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 70px;
     align-items: start;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .service-title {
@@ -1010,7 +1020,8 @@ body.about-page {
     }
 
     /* Mobile fix: 'fixed' backgrounds are unreliable on phones, so switch to scroll */
-    body.about-page {
+    body.about-page,
+    body.services-page {
         background-attachment: scroll !important;
         background-position: center top !important;
     }
