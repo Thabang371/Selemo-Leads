@@ -132,6 +132,285 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 /* ==========================================================================
+   3.5 HOMEPAGE MEGA HERO — pixel-matched to the 1920x1080 mockup.
+   All internal elements are positioned as percentages of the container so
+   the whole composition scales together and keeps its proportions at any
+   screen width, then collapses to a normal stacked layout on mobile.
+   ========================================================================== */
+.mega-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+    overflow: hidden;
+    background: #3a3a3a url('images/homepage.avif') no-repeat center center/cover;
+}
+
+.mega-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* Logo badge — bordered square, top-left (measured 1.51% / 3.43% / 10.31% / 18.33%) */
+.mega-logo-badge {
+    position: absolute;
+    left: 1.51%;
+    top: 3.43%;
+    width: 10.31%;
+    height: 18.33%;
+    z-index: 4;
+    border: 3px solid rgba(255, 255, 255, 0.92);
+    box-sizing: border-box;
+    background: rgba(18, 22, 26, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+}
+
+.mega-logo-badge a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mega-logo-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Title + tagline — centered across the full width above the nav bar */
+.mega-title-block {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+    padding: 0 14% 0 6%;
+    box-sizing: border-box;
+}
+
+.mega-title-block h1 {
+    color: #ff9430;
+    font-size: clamp(20px, 3.75vw, 68px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+    margin-bottom: 0.6%;
+    line-height: 1.15;
+}
+
+.mega-title-block p {
+    color: #ffffff;
+    font-size: clamp(11px, 1.35vw, 26px);
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Nav bar — full-width solid orange band overlaid on the photo (measured 27.87% / 9.35%) */
+.mega-nav {
+    position: absolute;
+    top: 27.87%;
+    left: 0;
+    width: 100%;
+    height: 9.35%;
+    background-color: #ff9430;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mega-nav ul {
+    display: flex;
+    list-style: none;
+    gap: clamp(14px, 2.6vw, 55px);
+    padding: 0 3%;
+    flex-wrap: nowrap;
+}
+
+.mega-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(10px, 1.05vw, 19px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.mega-nav a:hover,
+.mega-nav a.active {
+    color: #12161a;
+}
+
+.mega-hamburger {
+    z-index: 5;
+}
+
+/* Footer contact strip — translucent panel across the bottom (measured 82.2% top) */
+.mega-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 17.8%;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.93);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1.6% 3% 1.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mega-footer-heading {
+    color: #ff9430;
+    font-size: clamp(12px, 1.3vw, 24px);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 700px;
+    margin: 0 auto 0.5%;
+}
+
+.mega-footer-subtext {
+    color: #444444;
+    font-size: clamp(9px, 0.82vw, 15px);
+    line-height: 1.55;
+    margin-bottom: 1.1%;
+}
+
+.mega-footer-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(16px, 2.8vw, 48px);
+}
+
+.mega-footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(9px, 0.85vw, 15px);
+    color: #333333;
+}
+
+.mega-footer-item .detail-label {
+    font-weight: 700;
+    color: #12161a;
+    white-space: nowrap;
+}
+
+.mega-footer-item .phone-btn {
+    background-color: #ff9430;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: clamp(4px, 0.6vw, 10px) clamp(10px, 1.4vw, 22px);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.mega-footer-item .phone-btn:hover {
+    background-color: #e57c35;
+}
+
+.mega-footer-item .detail-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(16px, 1.6vw, 28px);
+    height: clamp(16px, 1.6vw, 28px);
+    border-radius: 50%;
+    background-color: rgba(255, 148, 48, 0.15);
+    color: #ff9430;
+    font-size: clamp(8px, 0.75vw, 14px);
+    flex-shrink: 0;
+}
+
+.mega-footer-item a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.mega-footer-item a:hover {
+    color: #ff9430;
+}
+
+.mega-footer-item .address-text {
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Mobile — collapse the pixel-locked composition into a normal stacked layout */
+@media (max-width: 768px) {
+    .mega-hero {
+        aspect-ratio: unset;
+        height: auto;
+    }
+
+    .mega-overlay {
+        background: rgba(0, 0, 0, 0.35);
+    }
+
+    .mega-logo-badge {
+        position: static;
+        width: 90px;
+        height: 90px;
+        margin: 20px auto 10px;
+    }
+
+    .mega-title-block {
+        position: static;
+        padding: 0 20px 20px;
+    }
+
+    .mega-title-block h1 {
+        font-size: 24px;
+    }
+
+    .mega-title-block p {
+        font-size: 13px;
+    }
+
+    .mega-hamburger {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+    }
+
+    .mega-nav {
+        position: static;
+        height: auto;
+        background: transparent;
+    }
+
+    .mega-footer {
+        position: static;
+        background: rgba(255, 255, 255, 0.97);
+        padding: 25px 20px;
+    }
+
+    .mega-footer-details {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mega-footer-item .address-text {
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
 .about-banner {
@@ -1130,7 +1409,291 @@ body {
         flex-direction: column !important;
         gap: 18px !important;
     }
-    .contact-detail-item .address-text {
-        text-align: center !important;
+/* ==========================================================================
+   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO
+   Logo, Title, Nav Bar, and Contact Strip all sit on ONE continuous
+   background photo, sized to a locked 1920x1080 aspect ratio and scaled
+   with container-query units (1cqw = 1% of the hero's own width, i.e.
+   19.2px at a 1920px-wide render) so every layer scales together instead
+   of reflowing independently on smaller screens.
+   ========================================================================== */
+.homepage-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+    overflow: hidden;
+    container-type: inline-size;
+    background: #4a4a4a url('images/homepage.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* ---- Top row: logo (left) + centered title/tagline ---- */
+.homepage-hero__top {
+    position: absolute;
+    top: 1.46cqw;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 11.5cqw 1fr 11.5cqw;
+    align-items: start;
+    padding: 0 2cqw;
+    z-index: 3;
+}
+
+.homepage-hero__logo-box {
+    grid-column: 1;
+    width: 10.4cqw;
+    height: 10.4cqw;
+    background-color: rgba(35, 38, 41, 0.55);
+    border: 0.21cqw solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.3cqw 1cqw rgba(0, 0, 0, 0.35);
+}
+
+.homepage-hero__logo-box img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+}
+
+.homepage-hero__title-block {
+    grid-column: 2;
+    text-align: center;
+    padding-top: 2.2cqw;
+}
+
+.homepage-hero__title-block h1 {
+    color: #f2811e;
+    font-size: 3.55cqw;
+    font-weight: 500;
+    letter-spacing: 0.15cqw;
+    text-shadow: 0 0.15cqw 0.5cqw rgba(0, 0, 0, 0.45);
+    margin-bottom: 0.7cqw;
+    white-space: nowrap;
+}
+
+.homepage-hero__title-block p {
+    color: #ffffff;
+    font-size: 1.85cqw;
+    font-style: italic;
+    font-weight: 400;
+    text-shadow: 0 0.1cqw 0.4cqw rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Solid orange nav bar overlaid on the photo ---- */
+.homepage-hero__nav {
+    position: absolute;
+    top: 14.17cqw;
+    left: 0;
+    width: 100%;
+    height: 6.77cqw;
+    background-color: #f2811e;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    box-shadow: 0 0.3cqw 0.8cqw rgba(0, 0, 0, 0.2);
+}
+
+.homepage-hero__nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.homepage-hero__nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.35cqw;
+    font-weight: 500;
+    letter-spacing: 0.05cqw;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.homepage-hero__nav a:hover,
+.homepage-hero__nav a.active {
+    opacity: 0.75;
+}
+
+/* ---- Semi-transparent bottom contact strip, photo shows through ---- */
+.homepage-hero__strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.93);
+    padding: 2cqw 2cqw 1.8cqw 2cqw;
+    text-align: center;
+    z-index: 3;
+}
+
+.homepage-hero__strip-heading {
+    color: #f2811e;
+    font-size: 1.55cqw;
+    font-weight: 700;
+    letter-spacing: 0.03cqw;
+    line-height: 1.3;
+    max-width: 45cqw;
+    margin: 0 auto 0.5cqw auto;
+}
+
+.homepage-hero__strip-subtext {
+    color: #444444;
+    font-size: 1cqw;
+    line-height: 1.5;
+    margin-bottom: 1.3cqw;
+}
+
+.homepage-hero__strip-details {
+    max-width: 90cqw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5cqw;
+}
+
+.homepage-hero__strip-details .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7cqw;
+    font-size: 1.05cqw;
+    color: #222222;
+}
+
+.homepage-hero__strip-details .detail-label {
+    font-weight: 700;
+    color: #12161a;
+    white-space: nowrap;
+}
+
+.homepage-hero__strip-details .phone-btn {
+    background-color: #f2811e;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.03cqw;
+    padding: 0.7cqw 1.6cqw;
+    border-radius: 0.2cqw;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.homepage-hero__strip-details .phone-btn:hover {
+    background-color: #d96f15;
+}
+
+.homepage-hero__strip-details .detail-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1cqw;
+    height: 2.1cqw;
+    border-radius: 50%;
+    background-color: rgba(242, 129, 30, 0.14);
+    color: #f2811e;
+    font-size: 1.05cqw;
+    flex-shrink: 0;
+}
+
+.homepage-hero__strip-details a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.homepage-hero__strip-details a:hover {
+    color: #f2811e;
+}
+
+.homepage-hero__strip-details .address-text {
+    line-height: 1.35;
+    text-align: left;
+}
+
+/* ---- Mobile hamburger menu for the homepage hero nav ---- */
+.homepage-hero__nav .hamburger-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .homepage-hero {
+        aspect-ratio: auto;
+        min-height: 100vh;
+    }
+
+    .homepage-hero__top {
+        grid-template-columns: 9cqw 1fr;
+        padding: 0 3cqw;
+    }
+
+    .homepage-hero__logo-box {
+        width: 13cqw;
+        height: 13cqw;
+    }
+
+    .homepage-hero__title-block {
+        grid-column: 2;
+        padding-top: 1cqw;
+    }
+
+    .homepage-hero__title-block h1 {
+        font-size: 4.4cqw;
+    }
+
+    .homepage-hero__title-block p {
+        font-size: 2.6cqw;
+    }
+
+    .homepage-hero__nav {
+        top: 20cqw;
+        height: auto;
+        padding: 1.5cqw 0;
+    }
+
+    .homepage-hero__nav ul {
+        flex-direction: column;
+        gap: 1.2cqw;
+    }
+
+    .homepage-hero__nav a {
+        font-size: 2.6cqw;
+    }
+
+    .homepage-hero__strip {
+        position: relative;
+        padding: 4cqw 4cqw 3.5cqw 4cqw;
+    }
+
+    .homepage-hero__strip-heading {
+        font-size: 3.4cqw;
+        max-width: 100%;
+    }
+
+    .homepage-hero__strip-subtext {
+        font-size: 2.4cqw;
+    }
+
+    .homepage-hero__strip-details {
+        flex-direction: column;
+        gap: 2.5cqw;
+    }
+
+    .homepage-hero__strip-details .detail-item {
+        font-size: 2.6cqw;
+    }
+
+    .homepage-hero__strip-details .detail-icon {
+        width: 5cqw;
+        height: 5cqw;
+        font-size: 2.6cqw;
+    }
+
+    .homepage-hero__strip-details .address-text {
+        text-align: center;
     }
 }
