@@ -463,12 +463,14 @@ body.careers-page {
    7. CAREERS PAGE COMPONENTS
    ========================================================================== */
 .careers-hero {
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 0;
     position: relative;
     background: transparent; /* Shared page graphic from body.careers-page shows through */
     display: flex;
     align-items: center;
+    padding: 60px 0;
+    box-sizing: border-box;
 }
 
 .careers-overlay {
@@ -489,7 +491,10 @@ body.careers-page {
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
-    justify-content: flex-end; /* Pushes content block card to the right side */
+    justify-content: space-between; /* Openings list and CTA card sit side by side */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
 .careers-text-box {
