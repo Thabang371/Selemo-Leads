@@ -8,36 +8,32 @@
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
 </head>
 <body>
-
     <header class="main-header">
-    <div class="header-container">
-        <div class="logo-area">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.avif" alt="Selemo Leads Direct Logo" class="brand-logo-img">
-            </a>
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.avif" alt="Selemo Leads Direct Logo" class="brand-logo-img">
+                </a>
+            </div>
+            <!-- Mobile Hamburger Button Toggle -->
+            <button id="mobile-menu-toggle" class="hamburger-btn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav id="main-nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="offers.html">OUR OFFERS</a></li>
+                    <li><a href="newsletter.html">NEWSLETTER</a></li>
+                    <li><a href="careers.html">CAREERS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <!-- New Mobile Hamburger Button Toggle -->
-        <button id="mobile-menu-toggle" class="hamburger-btn" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <!-- Added id="main-nav-menu" for JS interaction -->
-        <nav id="main-nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="offers.html">OFFERS</a></li>
-                <li><a href="newsletter.html">NEWSLETTER</a></li>
-                <li><a href="careers.html">CAREERS</a></li>
-                <li><a href="contact.html">CONTACT US</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <section class="hero-banner">
         <div class="hero-overlay"></div>
@@ -46,6 +42,30 @@
             <p class="hero-tagline">"Where growth leads to destiny"</p>
         </div>
     </section>
-<script src="script.js"></script>
+
+    <!-- Bottom Contact Strip -->
+    <section class="home-contact-strip">
+        <p class="contact-strip-heading">Looking for immediate expert assistance from our team?</p>
+        <p class="contact-strip-subtext">
+            For any inquiries, feel free to reach out to us via phone or email.<br>
+            You can also visit our office at the address below.
+        </p>
+        <div class="contact-strip-details">
+            <div class="contact-detail-item">
+                <span class="detail-label">Call us now!</span>
+                <a href="tel:+2673922055" class="phone-btn">+267 3922055</a>
+            </div>
+            <div class="contact-detail-item">
+                <span class="detail-icon">&#9993;</span>
+                <a href="mailto:info@selemoleaddirect.com">info@selemoleaddirect.com</a>
+            </div>
+            <div class="contact-detail-item">
+                <span class="detail-icon">&#128205;</span>
+                <span class="address-text">Plot 131 Unit 9, Nkwe Square<br>Gaborone International Finance Park</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
