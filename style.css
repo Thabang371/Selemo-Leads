@@ -85,7 +85,7 @@ body {
     height: calc(100vh - 70px); /* Fills the exact remaining height of the viewport */
     margin-top: 70px; /* Prevents the fixed header from hiding the top of the image */
     position: relative;
-    background: url('images/homepage.jpg') no-repeat center center;
+    background: url('images/homepage.avif') no-repeat center center;
     background-size: cover; /* Keeps the background full-bleed across all screen widths */
     display: flex;
     align-items: center;
@@ -1032,23 +1032,21 @@ body {
     .newsletter-subtext { font-size: 12.5px !important; }
 }
 
-/* ==========================================================================
-   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO
-   Logo, Title, Nav Bar, and Contact Strip all sit on ONE continuous
-   background photo, locked to a 1920x1080 aspect ratio.
 
-   Base rules below use vw units (baseline: value_px_at_1920 / 19.2 = vw),
-   which works in every browser. The @supports block further down upgrades
-   to container-query units (cqw) in modern browsers so the whole hero
-   scales relative to its own box rather than the viewport — useful if the
-   hero is ever placed inside a narrower wrapper.
+/* ==========================================================================
+   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO (FLEXIBLE ACROSS DEVICES)
+   Logo, Title, Nav Bar, and Contact Strip sit on ONE continuous background
+   photo. Every size uses clamp(min, fluid-vw, max) so the design scales
+   smoothly with viewport width but never shrinks below a readable floor
+   on small phones or balloons past a sane ceiling on huge monitors.
+   Below 900px the composition switches to a normal stacked layout, with
+   a further tightened version under 480px for small phones.
    ========================================================================== */
 .homepage-hero {
     position: relative;
     width: 100%;
     aspect-ratio: 1920 / 1080;
     overflow: hidden;
-    container-type: inline-size;
     background: #4a4a4a url('images/homepage.jpg') no-repeat center center;
     background-size: cover;
 }
@@ -1056,26 +1054,27 @@ body {
 /* ---- Top row: logo (left) + centered title/tagline ---- */
 .homepage-hero__top {
     position: absolute;
-    top: 1.46vw;
+    top: clamp(10px, 1.46vw, 28px);
     left: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 11.5vw 1fr 11.5vw;
+    grid-template-columns: clamp(70px, 11.5vw, 220px) 1fr clamp(70px, 11.5vw, 220px);
     align-items: start;
-    padding: 0 2vw;
+    padding: 0 clamp(14px, 2vw, 38px);
+    box-sizing: border-box;
     z-index: 3;
 }
 
 .homepage-hero__logo-box {
     grid-column: 1;
-    width: 10.4vw;
-    height: 10.4vw;
+    width: clamp(64px, 10.4vw, 200px);
+    height: clamp(64px, 10.4vw, 200px);
     background-color: rgba(35, 38, 41, 0.55);
-    border: 0.21vw solid #ffffff;
+    border: clamp(2px, 0.21vw, 4px) solid #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
 }
 
@@ -1088,39 +1087,39 @@ body {
 .homepage-hero__title-block {
     grid-column: 2;
     text-align: center;
-    padding-top: 2.2vw;
+    padding-top: clamp(6px, 2.2vw, 42px);
 }
 
 .homepage-hero__title-block h1 {
     color: #f2811e;
-    font-size: 3.55vw;
+    font-size: clamp(18px, 3.55vw, 68px);
     font-weight: 500;
-    letter-spacing: 0.15vw;
-    text-shadow: 0 0.15vw 0.5vw rgba(0, 0, 0, 0.45);
-    margin-bottom: 0.7vw;
-    white-space: nowrap;
+    letter-spacing: clamp(0.5px, 0.15vw, 3px);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+    margin-bottom: clamp(4px, 0.7vw, 14px);
+    line-height: 1.15;
 }
 
 .homepage-hero__title-block p {
     color: #ffffff;
-    font-size: 1.85vw;
+    font-size: clamp(10px, 1.85vw, 36px);
     font-style: italic;
     font-weight: 400;
-    text-shadow: 0 0.1vw 0.4vw rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ---- Solid orange nav bar overlaid on the photo ---- */
 .homepage-hero__nav {
     position: absolute;
-    top: 14.17vw;
+    top: clamp(48px, 14.17vw, 272px);
     left: 0;
     width: 100%;
-    height: 6.77vw;
+    height: clamp(40px, 6.77vw, 130px);
     background-color: #f2811e;
     display: flex;
     align-items: center;
     z-index: 3;
-    box-shadow: 0 0.3vw 0.8vw rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .homepage-hero__nav ul {
@@ -1129,14 +1128,16 @@ body {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0 clamp(6px, 1vw, 20px);
+    box-sizing: border-box;
 }
 
 .homepage-hero__nav a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.35vw;
+    font-size: clamp(9px, 1.35vw, 26px);
     font-weight: 500;
-    letter-spacing: 0.05vw;
+    letter-spacing: clamp(0.2px, 0.05vw, 1px);
     white-space: nowrap;
     transition: opacity 0.3s ease;
 }
@@ -1153,7 +1154,7 @@ body {
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.93);
-    padding: 2vw 2vw 1.8vw 2vw;
+    padding: clamp(12px, 2vw, 38px) clamp(12px, 2vw, 38px) clamp(10px, 1.8vw, 34px);
     text-align: center;
     z-index: 3;
     box-sizing: border-box;
@@ -1161,36 +1162,36 @@ body {
 
 .homepage-hero__strip-heading {
     color: #f2811e;
-    font-size: 1.55vw;
+    font-size: clamp(12px, 1.55vw, 30px);
     font-weight: 700;
-    letter-spacing: 0.03vw;
+    letter-spacing: clamp(0.2px, 0.03vw, 1px);
     line-height: 1.3;
-    max-width: 45vw;
-    margin: 0 auto 0.5vw auto;
+    max-width: clamp(240px, 45vw, 864px);
+    margin: 0 auto clamp(4px, 0.5vw, 10px) auto;
 }
 
 .homepage-hero__strip-subtext {
     color: #444444;
-    font-size: 1vw;
+    font-size: clamp(9px, 1vw, 19px);
     line-height: 1.5;
-    margin-bottom: 1.3vw;
+    margin-bottom: clamp(8px, 1.3vw, 25px);
 }
 
 .homepage-hero__strip-details {
-    max-width: 90vw;
+    max-width: 92%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2.5vw;
+    gap: clamp(12px, 2.5vw, 48px);
 }
 
 .homepage-hero__strip-details .detail-item {
     display: flex;
     align-items: center;
-    gap: 0.7vw;
-    font-size: 1.05vw;
+    gap: clamp(4px, 0.7vw, 13px);
+    font-size: clamp(10px, 1.05vw, 20px);
     color: #222222;
 }
 
@@ -1205,9 +1206,9 @@ body {
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    letter-spacing: 0.03vw;
-    padding: 0.7vw 1.6vw;
-    border-radius: 0.2vw;
+    letter-spacing: clamp(0.2px, 0.03vw, 1px);
+    padding: clamp(6px, 0.7vw, 13px) clamp(12px, 1.6vw, 31px);
+    border-radius: 3px;
     white-space: nowrap;
     transition: background-color 0.3s ease;
 }
@@ -1220,12 +1221,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.1vw;
-    height: 2.1vw;
+    width: clamp(16px, 2.1vw, 40px);
+    height: clamp(16px, 2.1vw, 40px);
     border-radius: 50%;
     background-color: rgba(242, 129, 30, 0.14);
     color: #f2811e;
-    font-size: 1.05vw;
+    font-size: clamp(10px, 1.05vw, 20px);
     flex-shrink: 0;
 }
 
@@ -1243,26 +1244,18 @@ body {
     text-align: left;
 }
 
-/* ---- Progressive enhancement: switch vw -> cqw in modern browsers ---- */
-@supports (container-type: inline-size) {
-    .homepage-hero__top { top: 1.46cqw; grid-template-columns: 11.5cqw 1fr 11.5cqw; padding: 0 2cqw; }
-    .homepage-hero__logo-box { width: 10.4cqw; height: 10.4cqw; border-width: 0.21cqw; box-shadow: 0 0.3cqw 1cqw rgba(0, 0, 0, 0.35); }
-    .homepage-hero__title-block { padding-top: 2.2cqw; }
-    .homepage-hero__title-block h1 { font-size: 3.55cqw; letter-spacing: 0.15cqw; text-shadow: 0 0.15cqw 0.5cqw rgba(0, 0, 0, 0.45); margin-bottom: 0.7cqw; }
-    .homepage-hero__title-block p { font-size: 1.85cqw; text-shadow: 0 0.1cqw 0.4cqw rgba(0, 0, 0, 0.5); }
-    .homepage-hero__nav { top: 14.17cqw; height: 6.77cqw; box-shadow: 0 0.3cqw 0.8cqw rgba(0, 0, 0, 0.2); }
-    .homepage-hero__nav a { font-size: 1.35cqw; letter-spacing: 0.05cqw; }
-    .homepage-hero__strip { padding: 2cqw 2cqw 1.8cqw 2cqw; }
-    .homepage-hero__strip-heading { font-size: 1.55cqw; letter-spacing: 0.03cqw; max-width: 45cqw; margin-bottom: 0.5cqw; }
-    .homepage-hero__strip-subtext { font-size: 1cqw; margin-bottom: 1.3cqw; }
-    .homepage-hero__strip-details { max-width: 90cqw; gap: 2.5cqw; }
-    .homepage-hero__strip-details .detail-item { gap: 0.7cqw; font-size: 1.05cqw; }
-    .homepage-hero__strip-details .phone-btn { letter-spacing: 0.03cqw; padding: 0.7cqw 1.6cqw; border-radius: 0.2cqw; }
-    .homepage-hero__strip-details .detail-icon { width: 2.1cqw; height: 2.1cqw; font-size: 1.05cqw; }
+/* ---- Tablet: nav text/logo tighten slightly before the full stack ---- */
+@media (max-width: 1024px) {
+    .homepage-hero__nav a {
+        font-size: clamp(9px, 1.6vw, 15px);
+    }
+    .homepage-hero__nav ul {
+        padding: 0 4px;
+    }
 }
 
-/* ---- Mobile: collapse into a normal stacked layout ---- */
-@media (max-width: 768px) {
+/* ---- Below 900px: collapse into a normal stacked layout ---- */
+@media (max-width: 900px) {
     .homepage-hero {
         aspect-ratio: auto;
         min-height: 100vh;
@@ -1271,75 +1264,119 @@ body {
     .homepage-hero__top {
         position: static;
         display: grid;
-        grid-template-columns: 22vw 1fr;
-        padding: 4vw 4vw 0 4vw;
+        grid-template-columns: 90px 1fr;
+        column-gap: 16px;
+        padding: 24px 20px 0 20px;
     }
 
     .homepage-hero__logo-box {
-        width: 18vw;
-        height: 18vw;
+        width: 90px;
+        height: 90px;
     }
 
     .homepage-hero__title-block {
-        padding-top: 2vw;
+        padding-top: 8px;
     }
 
     .homepage-hero__title-block h1 {
-        font-size: 6.5vw;
+        font-size: 26px;
         white-space: normal;
     }
 
     .homepage-hero__title-block p {
-        font-size: 3.6vw;
+        font-size: 14px;
     }
 
     .homepage-hero__nav {
         position: static;
         height: auto;
-        padding: 3vw 0;
-        margin-top: 4vw;
+        padding: 12px 0;
+        margin-top: 20px;
     }
 
     .homepage-hero__nav ul {
         flex-direction: column;
-        gap: 3vw;
+        gap: 14px;
+        padding: 0;
     }
 
     .homepage-hero__nav a {
-        font-size: 4vw;
+        font-size: 15px;
     }
 
     .homepage-hero__strip {
         position: static;
-        padding: 6vw 5vw;
+        padding: 24px 20px;
     }
 
     .homepage-hero__strip-heading {
-        font-size: 5vw;
+        font-size: 18px;
         max-width: 100%;
     }
 
     .homepage-hero__strip-subtext {
-        font-size: 3.6vw;
+        font-size: 13px;
     }
 
     .homepage-hero__strip-details {
         flex-direction: column;
-        gap: 4vw;
+        gap: 16px;
         max-width: 100%;
     }
 
     .homepage-hero__strip-details .detail-item {
-        font-size: 4vw;
+        font-size: 14px;
     }
 
     .homepage-hero__strip-details .detail-icon {
-        width: 8vw;
-        height: 8vw;
-        font-size: 4vw;
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
     }
 
     .homepage-hero__strip-details .address-text {
         text-align: center;
+    }
+}
+
+/* ---- Small phones: tighten further ---- */
+@media (max-width: 480px) {
+    .homepage-hero__top {
+        grid-template-columns: 64px 1fr;
+        padding: 18px 16px 0 16px;
+    }
+
+    .homepage-hero__logo-box {
+        width: 64px;
+        height: 64px;
+    }
+
+    .homepage-hero__title-block h1 {
+        font-size: 20px;
+    }
+
+    .homepage-hero__title-block p {
+        font-size: 12px;
+    }
+
+    .homepage-hero__nav a {
+        font-size: 13px;
+    }
+
+    .homepage-hero__strip {
+        padding: 20px 16px;
+    }
+
+    .homepage-hero__strip-heading {
+        font-size: 15px;
+    }
+
+    .homepage-hero__strip-subtext {
+        font-size: 12px;
+    }
+
+    .homepage-hero__strip-details .phone-btn {
+        padding: 8px 16px;
+        font-size: 13px;
     }
 }
