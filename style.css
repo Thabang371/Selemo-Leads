@@ -487,18 +487,18 @@ body.careers-page {
     position: relative;
     z-index: 5;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1350px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
     justify-content: space-between; /* Openings list and CTA card sit side by side */
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
 }
 
 .careers-text-box {
-    max-width: 550px;
+    max-width: 480px;
     text-align: right;
     display: flex;
     flex-direction: column;
