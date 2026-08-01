@@ -85,7 +85,7 @@ body {
     height: calc(100vh - 70px); /* Fills the exact remaining height of the viewport */
     margin-top: 70px; /* Prevents the fixed header from hiding the top of the image */
     position: relative;
-    background: url('images/homepage.avif') no-repeat center center;
+    background: url('images/homepage.jpg') no-repeat center center;
     background-size: cover; /* Keeps the background full-bleed across all screen widths */
     display: flex;
     align-items: center;
