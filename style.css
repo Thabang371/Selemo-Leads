@@ -90,6 +90,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Aligns the content block to the left side */
+    opacity:0.75;
 }
 
 /* Clear overlay to keep text highly legible over the background assets */
