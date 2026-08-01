@@ -860,6 +860,100 @@ body {
     background-color: #fafafa;
 }
 /* ==========================================================================
+   9.5 HOMEPAGE BOTTOM CONTACT STRIP
+   ========================================================================== */
+.home-contact-strip {
+    background-color: #ffffff;
+    padding: 30px 20px 25px 20px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+
+.contact-strip-heading {
+    color: #e57c35;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    max-width: 500px;
+    margin: 0 auto 8px auto;
+}
+
+.contact-strip-subtext {
+    color: #555555;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-strip-details {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #333333;
+}
+
+.contact-detail-item .detail-label {
+    font-weight: 600;
+    color: #12161a;
+    white-space: nowrap;
+}
+
+.contact-detail-item .phone-btn {
+    background-color: #e57c35;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 18px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.contact-detail-item .phone-btn:hover {
+    background-color: #cc6c2b;
+}
+
+.contact-detail-item .detail-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: rgba(229, 124, 53, 0.12);
+    color: #e57c35;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.contact-detail-item a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.contact-detail-item a:hover {
+    color: #e57c35;
+}
+
+.contact-detail-item .address-text {
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* ==========================================================================
    10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS (FINAL FIX)
    ========================================================================== */
 
@@ -1030,4 +1124,13 @@ body {
     .newsletter-container { margin: 50px auto !important; gap: 70px !important; }
     .newsletter-heading { font-size: 22px !important; }
     .newsletter-subtext { font-size: 12.5px !important; }
+
+    /* Homepage bottom contact strip stacks on mobile */
+    .contact-strip-details {
+        flex-direction: column !important;
+        gap: 18px !important;
+    }
+    .contact-detail-item .address-text {
+        text-align: center !important;
+    }
 }
