@@ -90,7 +90,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Aligns the content block to the left side */
-    opacity:0.75;
 }
 
 /* Clear overlay to keep text highly legible over the background assets */
@@ -137,13 +136,16 @@ body {
    ========================================================================== */
 .about-banner {
     margin-top: 60px; /* Offset to clear the fixed navbar */
-    height: 260px;
+    height: 300px;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
+    background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 8%;
+    box-sizing: border-box;
 }
 
 .banner-overlay {
@@ -152,7 +154,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
+    background: transparent; /* Background graphic is light, so no darkening overlay needed */
 }
 
 .banner-content {
@@ -161,11 +163,27 @@ body {
 }
 
 .banner-content h1 {
-    color: #ffffff;
+    color: #12161a;
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 2px;
     line-height: 1.3;
+}
+
+/* Mobile: recenter title and shrink the banner since the graphic crops tighter */
+@media (max-width: 768px) {
+    .about-banner {
+        height: 220px;
+        padding-left: 24px;
+        padding-right: 24px;
+        justify-content: center;
+        text-align: center;
+        background-position: center;
+    }
+
+    .about-banner .banner-content h1 {
+        font-size: 24px;
+    }
 }
 
 .about-container {
