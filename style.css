@@ -134,7 +134,12 @@ body {
 /* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
-body.about-page {
+body.about-page,
+body.services-page,
+body.offers-page,
+body.newsletter-page,
+body.contact-page,
+body.careers-page {
     background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
     background-size: cover;
     background-attachment: fixed;
@@ -375,12 +380,6 @@ body.about-page {
     letter-spacing: 2px;
 }
 
-body.services-page {
-    background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -480,6 +479,8 @@ body.services-page {
     flex-direction: column;
     gap: 100px;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 4px;
 }
 
 .newsletter-block {
@@ -785,13 +786,13 @@ body.services-page {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.88);
 }
 
 .offers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 70px;
     align-items: stretch; /* Forces all cards to be the exact same height dynamically */
 }
 
@@ -800,7 +801,7 @@ body.services-page {
     cursor: pointer;
     border: 1px solid #e1e1e1;
     padding: 25px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -1021,7 +1022,11 @@ body.services-page {
 
     /* Mobile fix: 'fixed' backgrounds are unreliable on phones, so switch to scroll */
     body.about-page,
-    body.services-page {
+    body.services-page,
+    body.offers-page,
+    body.newsletter-page,
+    body.contact-page,
+    body.careers-page {
         background-attachment: scroll !important;
         background-position: center top !important;
     }
