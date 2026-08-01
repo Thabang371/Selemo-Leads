@@ -348,38 +348,6 @@ body.careers-page {
 /* ==========================================================================
    5. SERVICES PAGE COMPONENTS
    ========================================================================== */
-.services-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.services-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.services-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.services-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -439,38 +407,6 @@ body.careers-page {
 /* ==========================================================================
    6. NEWSLETTER PAGE COMPONENTS
    ========================================================================== */
-.newsletter-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.newsletter-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-}
-
-.newsletter-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.newsletter-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 3px;
-}
-
 .newsletter-container {
     max-width: 800px;
     margin: 80px auto;
@@ -529,7 +465,7 @@ body.careers-page {
     height: 100vh;
     margin-top: 0;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920') no-repeat center center/cover;
+    background: transparent; /* Shared page graphic from body.careers-page shows through */
     display: flex;
     align-items: center;
 }
@@ -540,7 +476,7 @@ body.careers-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.25);
+    background: transparent; /* Background graphic is light, so no darkening overlay needed */
     z-index: 1;
 }
 
@@ -561,10 +497,14 @@ body.careers-page {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 30px 35px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .careers-title {
-    color: #ffffff;
+    color: #12161a;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -577,7 +517,7 @@ body.careers-page {
 }
 
 .careers-description {
-    color: #ffffff;
+    color: #555555;
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 30px;
@@ -613,7 +553,7 @@ body.careers-page {
     height: 100vh;
     margin-top: 0;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920') no-repeat center center/cover;
+    background: transparent; /* Shared page graphic from body.contact-page shows through */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -625,7 +565,7 @@ body.careers-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35);
+    background: transparent; /* Background graphic is light, so no darkening overlay needed */
     z-index: 1;
 }
 
@@ -643,7 +583,11 @@ body.careers-page {
 }
 
 .contact-side-info {
-    color: #ffffff;
+    color: #333333;
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 25px 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact-side-info.left-side h2 {
@@ -656,7 +600,7 @@ body.careers-page {
 .contact-side-info.left-side p {
     font-size: 12.5px;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #555555;
     margin-bottom: 25px;
 }
 
@@ -664,8 +608,8 @@ body.careers-page {
     width: 100%;
     height: 160px;
     background-color: #eaeaea;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Center Contact Form Card */
@@ -742,7 +686,7 @@ body.careers-page {
 
 .callout-subtext {
     font-size: 12.5px;
-    color: #e0e0e0;
+    color: #555555;
     line-height: 1.6;
 }
 
@@ -750,38 +694,6 @@ body.careers-page {
 /* ==========================================================================
    9. OFFERS SUB-PAGE COMPONENTS (INTERACTIVE & POLISHED)
    ========================================================================== */
-.offers-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.offers-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.offers-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.offers-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
 .offers-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -1047,8 +959,8 @@ body.careers-page {
     }
 }
 
-    /* Darken background overlay so text is readable */
-    .hero-overlay, .careers-overlay {
+    /* Darken background overlay so text is readable (homepage hero only; careers now uses a readable card instead) */
+    .hero-overlay {
         background: rgba(0, 0, 0, 0.6) !important;
     }
 
@@ -1056,6 +968,12 @@ body.careers-page {
         text-align: center !important;
         padding: 0 20px !important;
         width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .careers-text-box {
+        align-items: center !important;
+        text-align: center !important;
     }
 
     .hero-content h1, .careers-title {
