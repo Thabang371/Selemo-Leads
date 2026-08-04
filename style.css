@@ -1228,6 +1228,10 @@ body.careers-page {
 @media (max-width: 900px) {
     .homepage-hero {
         aspect-ratio: auto;
+        min-height: 100vh;
+        min-height: 100dvh; /* dvh accounts for mobile browser address bar, so no gap/overlap */
+        display: flex;
+        flex-direction: column;
     }
 
     .homepage-hero__top {
@@ -1275,6 +1279,7 @@ body.careers-page {
 
     .homepage-hero__strip {
         position: static;
+        margin-top: auto;
         padding: 24px 20px;
     }
 
