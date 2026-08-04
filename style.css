@@ -463,13 +463,13 @@ body.careers-page {
    7. CAREERS PAGE COMPONENTS
    ========================================================================== */
 .careers-hero {
-    min-height: 100vh;
+    min-height: auto;
     margin-top: 0;
     position: relative;
     background: transparent; /* Shared page graphic from body.careers-page shows through */
     display: flex;
     align-items: center;
-    padding: 60px 0;
+    padding: 40px 0 60px;
     box-sizing: border-box;
 }
 
@@ -556,13 +556,14 @@ body.careers-page {
    8. CONTACT US PAGE COMPONENTS
    ========================================================================== */
 .contact-hero {
-    height: 100vh;
+    height: auto;
     margin-top: 0;
     position: relative;
     background: transparent; /* Shared page graphic from body.contact-page shows through */
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 0 60px;
 }
 
 .contact-overlay {
@@ -836,8 +837,8 @@ body.careers-page {
 @media (max-width: 992px) {
     .contact-hero {
         height: auto;
-        min-height: 100vh;
-        padding: 100px 0 50px 0;
+        min-height: auto;
+        padding: 30px 0 50px 0;
     }
     .contact-content-grid {
         grid-template-columns: 1fr;
@@ -968,7 +969,7 @@ body.careers-page {
     /* 4. HERO SECTION HEIGHT & OVERLAY FIXES */
    /* Mobile Hero Fix */
 @media (max-width: 768px) {
-    .hero-banner, .careers-hero {
+    .hero-banner {
         height: 60vh !important;
         min-height: 400px !important;
         background-position: center center !important;
@@ -978,6 +979,10 @@ body.careers-page {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+    }
+    .careers-hero {
+        min-height: auto !important;
+        padding: 20px 0 40px !important;
     }
 }
 
