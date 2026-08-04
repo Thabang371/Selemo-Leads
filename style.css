@@ -1228,7 +1228,6 @@ body.careers-page {
 @media (max-width: 900px) {
     .homepage-hero {
         aspect-ratio: auto;
-        min-height: 100vh;
     }
 
     .homepage-hero__top {
