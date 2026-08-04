@@ -1265,6 +1265,55 @@ body.careers-page {
         height: auto;
         padding: 12px 0;
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ---- Hamburger toggle button (mobile only) ---- */
+    .hero-nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .hero-nav-toggle__bar {
+        width: 26px;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* ---- Collapsed link list, shown only when nav has .is-open ---- */
+    .homepage-hero__nav ul {
+        display: none;
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .homepage-hero__nav.is-open ul {
+        display: flex;
     }
 
     .homepage-hero__nav ul {
