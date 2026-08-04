@@ -618,6 +618,22 @@ body.careers-page {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.map-directions-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #cca462;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.map-directions-link:hover {
+    color: #b3894f;
+    text-decoration: underline;
+}
+
 /* Center Contact Form Card */
 .contact-form-wrapper {
     background-color: rgba(229, 213, 186, 0.85); /* Semi-transparent warm gold background */
