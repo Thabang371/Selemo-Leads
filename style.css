@@ -78,71 +78,20 @@ body {
     color: #e57c35; 
 }
 /* ==========================================================================
-   3. HOMEPAGE HERO BANNER (CONSTRAINED LEFT ALIGNMENT & FULL SCREEN)
-   ========================================================================== */
-.hero-banner {
-    width: 100%;
-    height: calc(100vh - 70px); /* Fills the exact remaining height of the viewport */
-    margin-top: 70px; /* Prevents the fixed header from hiding the top of the image */
-    position: relative;
-    background: url('images/homepage.avif') no-repeat center center;
-    background-size: cover; /* Keeps the background full-bleed across all screen widths */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligns the content block to the left side */
-}
-
-/* Clear overlay to keep text highly legible over the background assets */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.25); /* Lighter tint since text is now over the clean desk area */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Sits cleanly on top of the image overlay */
-    text-align: left; 
-    color: #ffffff;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 80px; /* Generous side padding to push text in from the screen edge */
-}
-
-/* This outer wrapper forces the headings to stay small and clear of the mug */
-.hero-content h1 {
-    font-size: 32px;
-    font-weight: 700;
-    max-width: 320px; /* Strictly boxes the title so it cannot stretch toward the mug */
-    line-height: 1.2;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content p {
-    font-size: 14px;
-    font-style: italic;
-    max-width: 300px; /* Keeps the tagline perfectly aligned under the title */
-    color: #e0e0e0;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-/* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
 .about-banner {
     margin-top: 60px; /* Offset to clear the fixed navbar */
-    height: 260px;
+    height: 250px;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
+    background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 8%;
+    box-sizing: border-box;
 }
 
 .banner-overlay {
@@ -151,7 +100,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
+    background: transparent; /* Background graphic is light, so no darkening overlay needed */
 }
 
 .banner-content {
@@ -160,38 +109,16 @@ body {
 }
 
 .banner-content h1 {
-    color: #ffffff;
+    color: #12161a;
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 2px;
     line-height: 1.3;
 }
 
-/* ---- About page ONLY: swap in the geometric graphic banner ----
-   Scoped via the .about-page body class so this never leaks onto
-   other pages (like Services) that reuse the shared .about-banner
-   markup for their own, unrelated banner. ---- */
-.about-page .about-banner {
-    height: 250px;
-    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
-    background-size: cover;
-    justify-content: flex-start;
-    text-align: left;
-    padding-left: 8%;
-    box-sizing: border-box;
-}
-
-.about-page .banner-overlay {
-    background: transparent; /* Background graphic is light, so no darkening overlay needed */
-}
-
-.about-page .banner-content h1 {
-    color: #12161a;
-}
-
 /* Mobile: recenter title and shrink the banner since the graphic crops tighter */
 @media (max-width: 768px) {
-    .about-page .about-banner {
+    .about-banner {
         height: 220px;
         padding-left: 24px;
         padding-right: 24px;
@@ -200,7 +127,7 @@ body {
         background-position: center;
     }
 
-    .about-page .banner-content h1 {
+    .banner-content h1 {
         font-size: 24px;
     }
 }
@@ -357,38 +284,6 @@ body {
 /* ==========================================================================
    5. SERVICES PAGE COMPONENTS
    ========================================================================== */
-.services-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.services-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.services-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.services-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -396,85 +291,10 @@ body {
     background-color: #ffffff;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    align-items: start;
-}
-
-.service-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.service-title {
-    color: #cca462; 
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    height: 42px;
-}
-
-.service-image-box {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background-color: #f0f0f0;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.service-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.service-description {
-    color: #666666;
-    font-size: 13px;
-    line-height: 1.7;
-    text-align: justify;
-}
-
 
 /* ==========================================================================
    6. NEWSLETTER PAGE COMPONENTS
    ========================================================================== */
-.newsletter-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.newsletter-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-}
-
-.newsletter-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.newsletter-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 3px;
-}
 
 .newsletter-container {
     max-width: 800px;
@@ -515,13 +335,6 @@ body {
 
 .newsletter-subtext.italicized {
     font-style: italic;
-}
-
-.pulse-icon {
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 2px;
 }
 
 
@@ -755,38 +568,6 @@ body {
 /* ==========================================================================
    9. OFFERS SUB-PAGE COMPONENTS (INTERACTIVE & POLISHED)
    ========================================================================== */
-.offers-banner {
-    margin-top: 60px;
-    height: 260px;
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.offers-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.offers-banner .banner-content {
-    position: relative;
-    z-index: 5;
-}
-
-.offers-banner h1 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
 .offers-container {
     max-width: 1150px;
     margin: 60px auto;
@@ -922,12 +703,10 @@ body {
         margin: 0 auto;
         width: 100%;
     }
-    .services-grid,
     .offers-grid {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    .service-title,
     .offer-title {
         height: auto;
         margin-bottom: 12px;
@@ -1028,7 +807,7 @@ body {
     /* 4. HERO SECTION HEIGHT & OVERLAY FIXES */
    /* Mobile Hero Fix */
 @media (max-width: 768px) {
-    .hero-banner, .careers-hero {
+    .careers-hero {
         height: 60vh !important;
         min-height: 400px !important;
         background-position: center center !important;
@@ -1042,22 +821,22 @@ body {
 }
 
     /* Darken background overlay so text is readable */
-    .hero-overlay, .careers-overlay {
+    .careers-overlay {
         background: rgba(0, 0, 0, 0.6) !important;
     }
 
-    .hero-content, .careers-content-wrapper {
+    .careers-content-wrapper {
         text-align: center !important;
         padding: 0 20px !important;
         width: 100% !important;
     }
 
-    .hero-content h1, .careers-title {
+    .careers-title {
         max-width: 100% !important;
         font-size: 26px !important;
     }
 
-    .hero-content p, .careers-description {
+    .careers-description {
         max-width: 100% !important;
         font-size: 14px !important;
     }
