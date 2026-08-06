@@ -134,22 +134,12 @@ body {
 /* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
-body.about-page,
-body.services-page,
-body.offers-page,
-body.newsletter-page,
-body.contact-page,
-body.careers-page {
-    background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 .about-banner {
     margin-top: 60px; /* Offset to clear the fixed navbar */
-    height: 300px;
+    height: 250px;
     position: relative;
-    background: transparent; /* Graphic now lives on body.about-page and shows through */
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -197,28 +187,28 @@ body.careers-page {
 }
 
 .about-container {
-    max-width: 1100px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 30px auto;
     padding: 0 25px;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: #ffffff;
 }
 
 .footprints-section {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
 }
 
 .section-accent-title {
     color: #cca462;
     font-size: 24px;
     letter-spacing: 1.5px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: 600;
 }
 
 .section-accent-title.centralized {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 26px;
     font-size: 28px;
 }
 
@@ -262,9 +252,9 @@ body.careers-page {
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 950px;
-    margin: 0 auto 50px auto;
+    gap: 24px;
+    max-width: 1050px;
+    margin: 0 auto 32px auto;
 }
 
 .pillar-card h4 {
@@ -287,18 +277,18 @@ body.careers-page {
     border: 0;
     height: 1px;
     background-color: #eaeaea;
-    margin: 40px auto;
-    max-width: 950px;
+    margin: 28px auto;
+    max-width: 1050px;
 }
 
 /* Team Profile Elements */
 .team-section {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 
 .group-photo-container {
-    max-width: 750px;
-    margin: 0 auto 50px auto;
+    max-width: 800px;
+    margin: 0 auto 32px auto;
     text-align: center;
 }
 
@@ -348,27 +338,55 @@ body.careers-page {
 /* ==========================================================================
    5. SERVICES PAGE COMPONENTS
    ========================================================================== */
+.services-banner {
+    margin-top: 60px;
+    height: 260px;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.services-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.services-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
 .services-container {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: #ffffff;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 40px;
     align-items: start;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 25px;
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .service-title {
@@ -407,6 +425,38 @@ body.careers-page {
 /* ==========================================================================
    6. NEWSLETTER PAGE COMPONENTS
    ========================================================================== */
+.newsletter-banner {
+    margin-top: 60px;
+    height: 260px;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.newsletter-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.newsletter-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.newsletter-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
 .newsletter-container {
     max-width: 800px;
     margin: 80px auto;
@@ -415,8 +465,6 @@ body.careers-page {
     flex-direction: column;
     gap: 100px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.88);
-    border-radius: 4px;
 }
 
 .newsletter-block {
@@ -448,7 +496,6 @@ body.careers-page {
 
 .newsletter-subtext.italicized {
     font-style: italic;
-    font-weight: 300;
 }
 
 .pulse-icon {
@@ -463,14 +510,12 @@ body.careers-page {
    7. CAREERS PAGE COMPONENTS
    ========================================================================== */
 .careers-hero {
-    min-height: auto;
+    height: 100vh;
     margin-top: 0;
     position: relative;
-    background: transparent; /* Shared page graphic from body.careers-page shows through */
+    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920') no-repeat center center/cover;
     display: flex;
     align-items: center;
-    padding: 40px 0 60px;
-    box-sizing: border-box;
 }
 
 .careers-overlay {
@@ -479,7 +524,7 @@ body.careers-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent; /* Background graphic is light, so no darkening overlay needed */
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
 
@@ -487,30 +532,23 @@ body.careers-page {
     position: relative;
     z-index: 5;
     width: 100%;
-    max-width: 1350px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
-    justify-content: space-between; /* Openings list and CTA card sit side by side */
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
+    justify-content: flex-end; /* Pushes content block card to the right side */
 }
 
 .careers-text-box {
-    max-width: 480px;
+    max-width: 550px;
     text-align: right;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 30px 35px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .careers-title {
-    color: #12161a;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -523,7 +561,7 @@ body.careers-page {
 }
 
 .careers-description {
-    color: #555555;
+    color: #ffffff;
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 30px;
@@ -556,14 +594,13 @@ body.careers-page {
    8. CONTACT US PAGE COMPONENTS
    ========================================================================== */
 .contact-hero {
-    height: auto;
+    height: 100vh;
     margin-top: 0;
     position: relative;
-    background: transparent; /* Shared page graphic from body.contact-page shows through */
+    background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0 60px;
 }
 
 .contact-overlay {
@@ -572,7 +609,7 @@ body.careers-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent; /* Background graphic is light, so no darkening overlay needed */
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
@@ -590,11 +627,7 @@ body.careers-page {
 }
 
 .contact-side-info {
-    color: #333333;
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 25px 30px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
 }
 
 .contact-side-info.left-side h2 {
@@ -607,7 +640,7 @@ body.careers-page {
 .contact-side-info.left-side p {
     font-size: 12.5px;
     line-height: 1.6;
-    color: #555555;
+    color: #e0e0e0;
     margin-bottom: 25px;
 }
 
@@ -615,24 +648,8 @@ body.careers-page {
     width: 100%;
     height: 160px;
     background-color: #eaeaea;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.map-directions-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    color: #cca462;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.map-directions-link:hover {
-    color: #b3894f;
-    text-decoration: underline;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Center Contact Form Card */
@@ -709,7 +726,7 @@ body.careers-page {
 
 .callout-subtext {
     font-size: 12.5px;
-    color: #555555;
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
@@ -717,17 +734,49 @@ body.careers-page {
 /* ==========================================================================
    9. OFFERS SUB-PAGE COMPONENTS (INTERACTIVE & POLISHED)
    ========================================================================== */
+.offers-banner {
+    margin-top: 60px;
+    height: 260px;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.offers-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.offers-banner .banner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.offers-banner h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
 .offers-container {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: #ffffff;
 }
 
 .offers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 40px;
     align-items: stretch; /* Forces all cards to be the exact same height dynamically */
 }
 
@@ -736,7 +785,7 @@ body.careers-page {
     cursor: pointer;
     border: 1px solid #e1e1e1;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.92);
+    background: #ffffff;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -837,8 +886,8 @@ body.careers-page {
 @media (max-width: 992px) {
     .contact-hero {
         height: auto;
-        min-height: auto;
-        padding: 30px 0 50px 0;
+        min-height: 100vh;
+        padding: 100px 0 50px 0;
     }
     .contact-content-grid {
         grid-template-columns: 1fr;
@@ -955,21 +1004,10 @@ body.careers-page {
         transform: translateY(-8px) rotate(-45deg) !important;
     }
 
-    /* Mobile fix: 'fixed' backgrounds are unreliable on phones, so switch to scroll */
-    body.about-page,
-    body.services-page,
-    body.offers-page,
-    body.newsletter-page,
-    body.contact-page,
-    body.careers-page {
-        background-attachment: scroll !important;
-        background-position: center top !important;
-    }
-
     /* 4. HERO SECTION HEIGHT & OVERLAY FIXES */
    /* Mobile Hero Fix */
 @media (max-width: 768px) {
-    .hero-banner {
+    .hero-banner, .careers-hero {
         height: 60vh !important;
         min-height: 400px !important;
         background-position: center center !important;
@@ -980,14 +1018,10 @@ body.careers-page {
         align-items: center !important;
         justify-content: center !important;
     }
-    .careers-hero {
-        min-height: auto !important;
-        padding: 20px 0 40px !important;
-    }
 }
 
-    /* Darken background overlay so text is readable (homepage hero only; careers now uses a readable card instead) */
-    .hero-overlay {
+    /* Darken background overlay so text is readable */
+    .hero-overlay, .careers-overlay {
         background: rgba(0, 0, 0, 0.6) !important;
     }
 
@@ -995,12 +1029,6 @@ body.careers-page {
         text-align: center !important;
         padding: 0 20px !important;
         width: 100% !important;
-        justify-content: center !important;
-    }
-
-    .careers-text-box {
-        align-items: center !important;
-        text-align: center !important;
     }
 
     .hero-content h1, .careers-title {
@@ -1250,9 +1278,6 @@ body.careers-page {
     .homepage-hero {
         aspect-ratio: auto;
         min-height: 100vh;
-        min-height: 100dvh; /* dvh accounts for mobile browser address bar, so no gap/overlap */
-        display: flex;
-        flex-direction: column;
     }
 
     .homepage-hero__top {
@@ -1286,55 +1311,6 @@ body.careers-page {
         height: auto;
         padding: 12px 0;
         margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* ---- Hamburger toggle button (mobile only) ---- */
-    .hero-nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 40px;
-        height: 40px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .hero-nav-toggle__bar {
-        width: 26px;
-        height: 3px;
-        background-color: #ffffff;
-        border-radius: 2px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .homepage-hero__nav.is-open .hero-nav-toggle__bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* ---- Collapsed link list, shown only when nav has .is-open ---- */
-    .homepage-hero__nav ul {
-        display: none;
-        width: 100%;
-        margin-top: 16px;
-    }
-
-    .homepage-hero__nav.is-open ul {
-        display: flex;
     }
 
     .homepage-hero__nav ul {
@@ -1349,7 +1325,6 @@ body.careers-page {
 
     .homepage-hero__strip {
         position: static;
-        margin-top: auto;
         padding: 24px 20px;
     }
 
