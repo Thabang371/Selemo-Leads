@@ -136,16 +136,13 @@ body {
    ========================================================================== */
 .about-banner {
     margin-top: 60px; /* Offset to clear the fixed navbar */
-    height: 250px;
+    height: 260px;
     position: relative;
-    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
-    background-size: cover;
+    background: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200') no-repeat center center/cover;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    padding-left: 8%;
-    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
 }
 
 .banner-overlay {
@@ -154,7 +151,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent; /* Background graphic is light, so no darkening overlay needed */
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .banner-content {
@@ -163,16 +160,38 @@ body {
 }
 
 .banner-content h1 {
-    color: #12161a;
+    color: #ffffff;
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 2px;
     line-height: 1.3;
 }
 
+/* ---- About page ONLY: swap in the geometric graphic banner ----
+   Scoped via the .about-page body class so this never leaks onto
+   other pages (like Services) that reuse the shared .about-banner
+   markup for their own, unrelated banner. ---- */
+.about-page .about-banner {
+    height: 250px;
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
+    background-size: cover;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 8%;
+    box-sizing: border-box;
+}
+
+.about-page .banner-overlay {
+    background: transparent; /* Background graphic is light, so no darkening overlay needed */
+}
+
+.about-page .banner-content h1 {
+    color: #12161a;
+}
+
 /* Mobile: recenter title and shrink the banner since the graphic crops tighter */
 @media (max-width: 768px) {
-    .about-banner {
+    .about-page .about-banner {
         height: 220px;
         padding-left: 24px;
         padding-right: 24px;
@@ -181,7 +200,7 @@ body {
         background-position: center;
     }
 
-    .about-banner .banner-content h1 {
+    .about-page .banner-content h1 {
         font-size: 24px;
     }
 }
