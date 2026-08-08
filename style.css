@@ -77,6 +77,21 @@ body {
 .nav-menu a.active {
     color: #e57c35; 
 }
+
+/* ==========================================================================
+   3. SHARED PAGE BACKGROUND (all inner pages)
+   ========================================================================== */
+body.about-page,
+body.services-page,
+body.offers-page,
+body.newsletter-page,
+body.contact-page,
+body.careers-page {
+    background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* ==========================================================================
    4. ABOUT US PAGE COMPONENTS
    ========================================================================== */
@@ -84,8 +99,7 @@ body {
     margin-top: 60px; /* Offset to clear the fixed navbar */
     height: 250px;
     position: relative;
-    background: #ffffff url('images/about-banner-bg.png') no-repeat right center;
-    background-size: cover;
+    background: transparent; /* Graphic now lives on the body background and shows through */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -136,7 +150,7 @@ body {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 25px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .footprints-section {
@@ -288,7 +302,7 @@ body {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -572,7 +586,7 @@ body {
     max-width: 1150px;
     margin: 60px auto;
     padding: 0 30px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .offers-grid {
@@ -724,7 +738,18 @@ body {
 
 /* Strict Mobile Handset Viewport Breakpoint */
 @media (max-width: 768px) {
-    
+
+    /* Mobile fix: 'fixed' backgrounds are unreliable on phones, so switch to scroll */
+    body.about-page,
+    body.services-page,
+    body.offers-page,
+    body.newsletter-page,
+    body.contact-page,
+    body.careers-page {
+        background-attachment: scroll !important;
+        background-position: center top !important;
+    }
+
     /* 1. HEADER CONTAINER FIX */
     .header-container {
         display: flex !important;
