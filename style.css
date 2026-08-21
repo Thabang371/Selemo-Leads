@@ -446,21 +446,21 @@ body.careers-page {
     background: #12161a url('images/contactis.avif') no-repeat center center;
     background-size: cover;
     display: flex;
-    flex-direction: column; /* This stacks the new title above the form grid */
     align-items: center;
     justify-content: center;
-    padding-top: 60px; /* Prevents the title from hiding under the navigation bar */
+    /* Removed flex-direction: column so the center grid behaves normally */
 }
 
 .hero-page-title {
-    position: relative;
-    z-index: 5;
-    color: #ffffff; /* White text to stand out over the image */
+    position: absolute; /* This pulls the text out of the center grid */
+    top: 100px; /* Pushes it down safely below your fixed navigation bar */
+    left: 8%; /* Matches the exact left-alignment of your old white banner */
+    z-index: 10;
+    color: #ffffff; /* Changed to white so it reads clearly over the dark photo */
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 40px; /* Space between the title and the grid below it */
-    text-align: center;
+    margin: 0;
 }
 
 .contact-overlay {
