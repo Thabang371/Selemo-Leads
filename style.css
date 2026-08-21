@@ -878,21 +878,15 @@ body.careers-page {
 
 
 /* ==========================================================================
-   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO (FLEXIBLE ACROSS DEVICES)
-   Logo, Title, Nav Bar, and Contact Strip sit on ONE continuous background
-   photo. Every size uses clamp(min, fluid-vw, max) so the design scales
-   smoothly with viewport width but never shrinks below a readable floor
-   on small phones or balloons past a sane ceiling on huge monitors.
-   Below 900px the composition switches to a normal stacked layout, with
-   a further tightened version under 480px for small phones.
+   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO (FIT ENTIRE SCREEN)
    ========================================================================== */
 .homepage-hero {
     position: relative;
     width: 100%;
     aspect-ratio: 1920 / 1080;
     overflow: hidden;
-    background: #4a4a4a url('images/homepage.jpg') no-repeat center center;
-    background-size: cover;
+    background: #4a4a4a url('images/bfcde4_3b5c2120e4714f10a933879c8e3f7e8a~mv2.avif') no-repeat center center;
+    background-size: 100% 100%; /* Forces the entire background image to scale and fit the screen without cropping */
 }
 
 /* ---- Top row: logo (left) + centered title/tagline ---- */
