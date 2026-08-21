@@ -78,7 +78,15 @@ body {
 /* ==========================================================================
    3. SHARED PAGE BACKGROUND (all inner pages)
    ========================================================================== */
-body.about-page,
+
+/* Specific custom background for the About Us page */
+body.about-page {
+    background: #ffffff url('images/470178531_122127990884397746_2430688733820537163_n.jpg') no-repeat right top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Shared background for the rest of the inner pages */
 body.services-page,
 body.offers-page,
 body.newsletter-page,
