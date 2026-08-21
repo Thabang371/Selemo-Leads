@@ -436,19 +436,31 @@ body.careers-page {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-
 /* ==========================================================================
    8. CONTACT US PAGE COMPONENTS
    ========================================================================== */
 .contact-hero {
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 0;
     position: relative;
-    background: #ffffff url('images/contactis.avif') no-repeat center center;
+    background: #12161a url('images/contactis.avif') no-repeat center center;
     background-size: cover;
     display: flex;
+    flex-direction: column; /* This stacks the new title above the form grid */
     align-items: center;
     justify-content: center;
+    padding-top: 60px; /* Prevents the title from hiding under the navigation bar */
+}
+
+.hero-page-title {
+    position: relative;
+    z-index: 5;
+    color: #ffffff; /* White text to stand out over the image */
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 40px; /* Space between the title and the grid below it */
+    text-align: center;
 }
 
 .contact-overlay {
