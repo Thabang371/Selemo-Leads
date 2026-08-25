@@ -87,12 +87,18 @@ body.about-page {
 }
 
 /* Shared background for the rest of the inner pages */
-body.services-page,
 body.offers-page,
 body.newsletter-page,
 body.contact-page,
 body.careers-page {
     background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Specific custom background for the Services page */
+body.services-page {
+    background: #ffffff url('images/1742457921624.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
