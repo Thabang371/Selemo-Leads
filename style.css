@@ -140,11 +140,12 @@ body.offers-page {
 }
 
 .banner-content h1 {
-    color: #12161a;
+    color: #ffffff; /* Changed to white for better visibility over backgrounds */
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 2px;
     line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Added text shadow to help it stand out */
 }
 
 @media (max-width: 768px) {
@@ -162,11 +163,24 @@ body.offers-page {
     }
 }
 
-.about-container {
+/* APPLIED FROSTED GLASS TO MAIN CONTAINERS */
+.about-container,
+.services-container,
+.offers-container {
     max-width: 1200px;
     margin: 30px auto;
-    padding: 0 25px;
-    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* Frosted glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.offers-container {
+    max-width: 1150px;
+    margin-top: 60px;
 }
 
 .footprints-section {
@@ -194,7 +208,8 @@ body.offers-page {
 }
 
 .narrative-text {
-    color: #666666;
+    color: #12161a; /* Darkened for readability on glass */
+    font-weight: 500;
     font-size: 13.5px;
     line-height: 1.7;
     max-width: 900px;
@@ -211,7 +226,7 @@ body.offers-page {
 }
 
 .pillars-header h3 {
-    color: #444444;
+    color: #12161a;
     font-size: 15px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -234,7 +249,7 @@ body.offers-page {
 
 .pillar-card h4 {
     color: #cca462;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     margin-bottom: 12px;
     line-height: 1.4;
@@ -242,7 +257,8 @@ body.offers-page {
 }
 
 .pillar-card p {
-    color: #777777;
+    color: #12161a;
+    font-weight: 500;
     font-size: 12.5px;
     line-height: 1.6;
     text-align: justify;
@@ -251,7 +267,7 @@ body.offers-page {
 .section-divider {
     border: 0;
     height: 1px;
-    background-color: #eaeaea;
+    background-color: rgba(0, 0, 0, 0.1);
     margin: 28px auto;
     max-width: 1050px;
 }
@@ -269,12 +285,13 @@ body.offers-page {
 .team-group-img {
     width: 100%;
     height: auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
 }
 
 .photo-caption, .exec-caption {
-    color: #555555;
+    color: #333333;
+    font-weight: 600;
     font-size: 12px;
     margin-top: 12px;
     letter-spacing: 0.5px;
@@ -297,9 +314,9 @@ body.offers-page {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background-color: #eaeaea;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border-radius: 2px;
+    background-color: transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
 }
 
 .exec-image-wrapper img {
@@ -309,26 +326,21 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   5. SERVICES PAGE COMPONENTS
-   ========================================================================== */
-.services-container {
-    max-width: 1150px;
-    margin: 60px auto;
-    padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* ==========================================================================
-   6. NEWSLETTER PAGE COMPONENTS
+   5. NEWSLETTER PAGE COMPONENTS
    ========================================================================== */
 .newsletter-container {
     max-width: 800px;
     margin: 80px auto;
-    padding: 0 20px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(12px); 
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     gap: 100px;
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .newsletter-block {
@@ -339,9 +351,9 @@ body.offers-page {
 }
 
 .newsletter-heading {
-    color: #2c3033;
+    color: #12161a;
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
@@ -352,8 +364,9 @@ body.offers-page {
 }
 
 .newsletter-subtext {
-    color: #7a828a;
-    font-size: 13.5px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0.5px;
 }
@@ -363,7 +376,7 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   7. CAREERS PAGE COMPONENTS
+   6. CAREERS PAGE COMPONENTS
    ========================================================================== */
 .careers-hero {
     height: 100vh;
@@ -447,7 +460,7 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   8. CONTACT US PAGE COMPONENTS (FIXED BACKGROUND)
+   7. CONTACT US PAGE COMPONENTS 
    ========================================================================== */
 .contact-hero {
     width: 100%;
@@ -524,17 +537,21 @@ body.offers-page {
 }
 
 .contact-form-wrapper {
-    background-color: rgba(229, 213, 186, 0.85);
+    /* Frosted glass applied to contact form */
+    background: rgba(229, 213, 186, 0.6); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 30px 25px;
-    border-radius: 2px;
+    border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .contact-form-wrapper h3 {
     color: #12161a;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
@@ -554,6 +571,7 @@ body.offers-page {
     background-color: rgba(255, 255, 255, 0.9);
     color: #333333;
     outline: none;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
@@ -573,6 +591,7 @@ body.offers-page {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     cursor: pointer;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
     margin-top: 5px;
 }
@@ -601,15 +620,8 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   9. OFFERS SUB-PAGE COMPONENTS
+   8. OFFERS SUB-PAGE COMPONENTS (FROSTED GLASS CARDS)
    ========================================================================== */
-.offers-container {
-    max-width: 1150px;
-    margin: 60px auto;
-    padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
 .offers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -619,27 +631,31 @@ body.offers-page {
 
 .offer-card.selectable {
     cursor: pointer;
-    border: 1px solid #e1e1e1;
+    /* Frosted glass effect for individual cards */
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5); 
     padding: 25px;
-    background: #ffffff;
-    border-radius: 4px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .offer-card.selectable:hover {
     transform: translateY(-6px);
     border-color: #e57c35;
-    box-shadow: 0 12px 24px rgba(229, 124, 53, 0.15);
+    background: rgba(255, 255, 255, 0.6); /* Gets slightly brighter on hover */
+    box-shadow: 0 12px 24px rgba(229, 124, 53, 0.2);
 }
 
 .offer-title {
     color: #12161a; 
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1.4;
     margin-bottom: 15px;
@@ -653,9 +669,9 @@ body.offers-page {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background-color: #f0f0f0;
+    background-color: transparent;
     margin-bottom: 20px;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .offer-image-box img {
@@ -670,8 +686,8 @@ body.offers-page {
 }
 
 .offer-description {
-    color: #666666;
-    font-size: 13px;
+    color: #12161a; /* Darkened for better contrast */
+    font-size: 13.5px;
     line-height: 1.7;
     text-align: justify;
     margin-bottom: 20px;
@@ -695,7 +711,7 @@ body.offers-page {
     cursor: pointer;
     width: 100%;
     transition: all 0.3s ease;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .offer-card.selectable:hover .select-btn {
@@ -707,11 +723,10 @@ body.offers-page {
 
 .offer-card.selectable:active {
     transform: scale(0.98);
-    background-color: #fafafa;
 }
 
 /* ==========================================================================
-   10. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
+   9. GLOBAL RESPONSIVE MEDIA BREAKPOINTS
    ========================================================================== */
 @media (max-width: 992px) {
     .contact-hero {
@@ -869,7 +884,7 @@ body.offers-page {
     .pillars-grid { grid-template-columns: 1fr !important; gap: 35px !important; }
     .pillar-card h4 { height: auto !important; }
     .executives-grid { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
-    .newsletter-container { margin: 50px auto !important; gap: 70px !important; }
+    .newsletter-container { margin: 50px auto !important; gap: 70px !important; padding: 25px !important; }
     .newsletter-heading { font-size: 22px !important; }
     .newsletter-subtext { font-size: 12.5px !important; }
     
@@ -881,7 +896,7 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   11. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO
+   10. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO
    ========================================================================== */
 .homepage-hero {
     position: relative;
@@ -991,9 +1006,7 @@ body.offers-page {
     bottom: 0;
     left: 0;
     width: 100%;
-    /* Lowered opacity to 0.2 for a clear see-through effect */
     background-color: rgba(255, 255, 255, 0.2);
-    /* Frosted glass blur effect so text remains readable over the background */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: clamp(12px, 2vw, 38px) clamp(12px, 2vw, 38px) clamp(10px, 1.8vw, 34px);
