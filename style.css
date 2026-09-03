@@ -8,8 +8,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Set the requested image as the fixed background for the entire page */
 body {
-    background-color: #f5f5f5;
+    background: #12161a url('images/bfcde4_3b5c2120e4714f10a933879c8e3f7e8a~mv2.avif') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
 }
 
@@ -78,20 +80,16 @@ body {
 /* ==========================================================================
    3. SHARED PAGE BACKGROUND (all inner pages)
    ========================================================================== */
-
-/* Specific custom background for the About Us page */
 body.about-page {
     background: #ffffff url('images/470178531_122127990884397746_2430688733820537163_n.jpg') no-repeat right top;
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* Careers page background styling */
 body.careers-page {
     background-color: #ffffff;
 }
 
-/* Shared background for the rest of the inner pages */
 body.newsletter-page,
 body.contact-page {
     background: #ffffff url('images/about-banner-bg.png') no-repeat right top;
@@ -99,14 +97,12 @@ body.contact-page {
     background-attachment: fixed;
 }
 
-/* Specific custom background for the Services page */
 body.services-page {
     background: #ffffff url('images/1742457921624.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* Specific custom background for the Offers page */
 body.offers-page {
     background: #ffffff url('images/bfcde4_c60a68caa83c436b9cf7b8c2d547cb10~mv2.avif') no-repeat center center;
     background-size: cover;
@@ -897,15 +893,14 @@ body.offers-page {
 }
 
 /* ==========================================================================
-   10. HOMEPAGE — SINGLE 1920x1080 LAYERED HERO
+   10. HOMEPAGE — SINGLE LAYERED HERO
    ========================================================================== */
 .homepage-hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 1920 / 1080;
+    min-height: 100vh;
     overflow: hidden;
-    background: #4a4a4a url('images/bfcde4_3b5c2120e4714f10a933879c8e3f7e8a~mv2.avif') no-repeat center center;
-    background-size: 100% 100%; 
+    background: transparent; 
 }
 
 .homepage-hero__top {
@@ -956,17 +951,9 @@ body.offers-page {
     line-height: 1.15;
 }
 
-.homepage-hero__title-block p {
-    color: #ffffff;
-    font-size: clamp(10px, 1.85vw, 36px);
-    font-style: italic;
-    font-weight: 400;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
 .homepage-hero__nav {
     position: absolute;
-    top: clamp(48px, 14.17vw, 272px);
+    top: clamp(240px, 28vw, 450px);
     left: 0;
     width: 100%;
     height: clamp(40px, 6.77vw, 130px);
@@ -1002,104 +989,6 @@ body.offers-page {
     opacity: 0.75;
 }
 
-.homepage-hero__strip {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: clamp(12px, 2vw, 38px) clamp(12px, 2vw, 38px) clamp(10px, 1.8vw, 34px);
-    text-align: center;
-    z-index: 3;
-    box-sizing: border-box;
-}
-
-.homepage-hero__strip-heading {
-    color: #f2811e;
-    font-size: clamp(12px, 1.55vw, 30px);
-    font-weight: 700;
-    letter-spacing: clamp(0.2px, 0.03vw, 1px);
-    line-height: 1.3;
-    max-width: clamp(240px, 45vw, 864px);
-    margin: 0 auto clamp(4px, 0.5vw, 10px) auto;
-}
-
-.homepage-hero__strip-subtext {
-    color: #444444;
-    font-size: clamp(9px, 1vw, 19px);
-    line-height: 1.5;
-    margin-bottom: clamp(8px, 1.3vw, 25px);
-}
-
-.homepage-hero__strip-details {
-    max-width: 92%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(12px, 2.5vw, 48px);
-}
-
-.homepage-hero__strip-details .detail-item {
-    display: flex;
-    align-items: center;
-    gap: clamp(4px, 0.7vw, 13px);
-    font-size: clamp(10px, 1.05vw, 20px);
-    color: #222222;
-}
-
-.homepage-hero__strip-details .detail-label {
-    font-weight: 700;
-    color: #12161a;
-    white-space: nowrap;
-}
-
-.homepage-hero__strip-details .phone-btn {
-    background-color: #f2811e;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: clamp(0.2px, 0.03vw, 1px);
-    padding: clamp(6px, 0.7vw, 13px) clamp(12px, 1.6vw, 31px);
-    border-radius: 3px;
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
-}
-
-.homepage-hero__strip-details .phone-btn:hover {
-    background-color: #d96f15;
-}
-
-.homepage-hero__strip-details .detail-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(16px, 2.1vw, 40px);
-    height: clamp(16px, 2.1vw, 40px);
-    border-radius: 50%;
-    background-color: rgba(242, 129, 30, 0.14);
-    color: #f2811e;
-    font-size: clamp(10px, 1.05vw, 20px);
-    flex-shrink: 0;
-}
-
-.homepage-hero__strip-details a {
-    color: #222222;
-    text-decoration: none;
-}
-
-.homepage-hero__strip-details a:hover {
-    color: #f2811e;
-}
-
-.homepage-hero__strip-details .address-text {
-    line-height: 1.35;
-    text-align: left;
-}
-
 @media (max-width: 1024px) {
     .homepage-hero__nav a {
         font-size: clamp(9px, 1.6vw, 15px);
@@ -1111,7 +1000,6 @@ body.offers-page {
 
 @media (max-width: 900px) {
     .homepage-hero {
-        aspect-ratio: auto;
         min-height: 100vh;
     }
 
@@ -1137,10 +1025,6 @@ body.offers-page {
         white-space: normal;
     }
 
-    .homepage-hero__title-block p {
-        font-size: 14px;
-    }
-
     .homepage-hero__nav {
         position: static;
         height: auto;
@@ -1156,40 +1040,6 @@ body.offers-page {
 
     .homepage-hero__nav a {
         font-size: 15px;
-    }
-
-    .homepage-hero__strip {
-        position: static;
-        padding: 24px 20px;
-    }
-
-    .homepage-hero__strip-heading {
-        font-size: 18px;
-        max-width: 100%;
-    }
-
-    .homepage-hero__strip-subtext {
-        font-size: 13px;
-    }
-
-    .homepage-hero__strip-details {
-        flex-direction: column;
-        gap: 16px;
-        max-width: 100%;
-    }
-
-    .homepage-hero__strip-details .detail-item {
-        font-size: 14px;
-    }
-
-    .homepage-hero__strip-details .detail-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 13px;
-    }
-
-    .homepage-hero__strip-details .address-text {
-        text-align: center;
     }
 }
 
@@ -1208,33 +1058,13 @@ body.offers-page {
         font-size: 20px;
     }
 
-    .homepage-hero__title-block p {
-        font-size: 12px;
-    }
-
     .homepage-hero__nav a {
         font-size: 13px;
     }
-
-    .homepage-hero__strip {
-        padding: 20px 16px;
-    }
-
-    .homepage-hero__strip-heading {
-        font-size: 15px;
-    }
-
-    .homepage-hero__strip-subtext {
-        font-size: 12px;
-    }
-
-    .homepage-hero__strip-details .phone-btn {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
 }
+
 /* ==========================================================================
-   11. NEW HOMEPAGE SECTIONS (What We Do, GOATED, Credibility, CTA)
+   11. NEW HOMEPAGE SECTIONS
    ========================================================================== */
 
 .section-padding {
@@ -1277,7 +1107,6 @@ body.offers-page {
     line-height: 1.6;
 }
 
-/* Adjustments for the new Hero text */
 .kicker-text {
     color: #ffffff;
     font-size: 18px;
@@ -1301,7 +1130,13 @@ body.offers-page {
     font-size: 20px;
 }
 
-/* Three Column Layout (What We Do) */
+/* Frosted glass backgrounds for the new sections */
+.what-we-do, .credibility {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
 .three-col-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1334,8 +1169,10 @@ body.offers-page {
 }
 
 /* GOATED Culture Grid */
-.dark-bg {
-    background-color: #12161a;
+.why-selemo {
+    background: rgba(18, 22, 26, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .goated-grid {
@@ -1382,8 +1219,10 @@ body.offers-page {
 }
 
 /* CTA Section */
-.accent-bg {
-    background-color: #e5d5ba; 
+.cta-section {
+    background: rgba(229, 213, 186, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .cta-buttons {
