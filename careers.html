@@ -6,6 +6,32 @@
 <title>Careers | Selemo Leads Direct</title>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="favicon.png">
+<style>
+/* Responsive fix for mobile layout stacking */
+@media (max-width: 900px) {
+    .careers-content-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 40px 20px !important;
+    }
+    .careers-text-box {
+        text-align: center !important;
+        align-items: center !important;
+        max-width: 100% !important;
+        margin-top: 40px !important;
+    }
+    #jobs-section {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .careers-hero {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+}
+</style>
 </head>
 <body class="careers-page">
 <header class="main-header">
@@ -44,20 +70,26 @@
 </section>
 <section class="careers-hero">
 <div class="careers-overlay"></div>
-<div class="careers-content-wrapper">
-<!-- 2. The New Open Positions Section (now sits beside the CTA card) -->
-<section id="jobs-section" style="max-width: 550px; padding: 0;">
-<h2 style="font-size: 28px; margin-bottom: 30px; color: #12161a; font-family: sans-serif; font-weight: 700;">Current Openings</h2>
-<div class="jobs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
-<!-- Position 1 -->
-<div class="job-card" data-job="Contact Centre Agent" style="border: 1px solid #e1e1e1; padding: 25px; border-radius: 6px; background: rgba(255,255,255,0.92); box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-<h3 style="font-size: 18px; color: #12161a; margin-bottom: 10px; font-family: sans-serif;">Contact Centre Agents</h3>
-<p style="font-size: 14px; color: #666666; margin-bottom: 20px; line-height: 1.5;">International Clients / Professional Environment • Join a professional team supporting international clients with great opportunities for career growth. No ceiling—your performance is your income.</p>
-<button class="apply-btn" style="background: #12161a; color: #ffffff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px;">Select & Apply</button>
+<div class="careers-content-wrapper" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; gap: 40px;">
+<!-- 2. The Open Positions Section with Both Adverts -->
+<section id="jobs-section" style="max-width: 550px; padding: 0; width: 100%;">
+<h2 style="font-size: 28px; margin-bottom: 30px; color: #ffffff; font-family: sans-serif; font-weight: 700;">Current Openings</h2>
+<div class="jobs-grid" style="display: grid; grid-template-columns: 1fr; gap: 25px;">
+<!-- Position 1: Collection Agents -->
+<div class="job-card" data-job="Collection Agent" style="border: 1px solid rgba(255,255,255,0.2); padding: 25px; border-radius: 6px; background: rgba(18,22,26,0.85); backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+<h3 style="font-size: 18px; color: #cca462; margin-bottom: 10px; font-family: sans-serif;">Collection Agents</h3>
+<p style="font-size: 14px; color: #e0e0e0; margin-bottom: 20px; line-height: 1.5;">Commission Based • Join a high-performance team servicing international clients with uncapped earning potential. No ceiling—your performance is your income.</p>
+<button class="apply-btn" style="background: #f2811e; color: #ffffff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px;">Select & Apply</button>
+</div>
+<!-- Position 2: Contact Centre Agents -->
+<div class="job-card" data-job="Contact Centre Agent" style="border: 1px solid rgba(255,255,255,0.2); padding: 25px; border-radius: 6px; background: rgba(18,22,26,0.85); backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+<h3 style="font-size: 18px; color: #cca462; margin-bottom: 10px; font-family: sans-serif;">Contact Centre Agents</h3>
+<p style="font-size: 14px; color: #e0e0e0; margin-bottom: 20px; line-height: 1.5;">International Clients / Professional Environment • Support international clients in a professional environment with clear pathways for career growth.</p>
+<button class="apply-btn" style="background: #f2811e; color: #ffffff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px;">Select & Apply</button>
 </div>
 </div>
 </section>
-<div class="careers-text-box">
+<div class="careers-text-box" style="max-width: 550px; text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
 <h1 class="careers-title">YOUR NEXT CAREER ADVENTURE STARTS <span class="highlight-yellow">HERE!</span></h1>
 <p class="careers-description">
 At Selemo Leads Direct, we're always on the lookout for talented, passionate individuals to join our team.
@@ -65,7 +97,6 @@ We offer a dynamic work environment where innovation, collaboration, and growth 
 Whether you're an experienced professional or just starting your career, we provide opportunities for
 development and success. Explore our current openings and discover how you can contribute to our mission.
 </p>
-<!-- Changed from a direct mailto link to a smooth scroll link targeting our new jobs section -->
 <a href="#jobs-section" class="cta-button" id="hero-apply-btn">Explore Openings</a>
 </div>
 </div>
@@ -73,7 +104,8 @@ development and success. Explore our current openings and discover how you can c
 <!-- 3. Dynamic Application Form -->
 <section id="application-section" style="max-width: 600px; margin: 60px auto 100px auto; padding: 0 20px;">
 <div class="contact-form-wrapper" style="background: rgba(255,255,255,0.92); padding: 40px; border-radius: 8px; border: 1px solid #e1e1e1;">
-<h3 style="font-size: 22px; margin-bottom: 20px; color: #12161a; font-family: sans-serif;">Submit Your Application</h3>
+<h3 style="font-size: 22px; margin-bottom: 10px; color: #12161a; font-family: sans-serif;">Submit Your Application</h3>
+<p style="font-size: 13px; color: #666666; margin-bottom: 20px;">Prefer to apply directly or have questions? Reach out to us at <a href="mailto:careers@selemoleads.com" style="color: #e57c35; font-weight: 600; text-decoration: none;">careers@selemoleads.com</a></p>
 <form id="jobApplicationForm" class="interactive-form">
 <div class="form-group" style="margin-bottom: 15px;">
 <input type="text" id="app-name" placeholder="Your Full Name" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
@@ -82,7 +114,6 @@ development and success. Explore our current openings and discover how you can c
 <input type="email" id="app-email" placeholder="Your Email Address" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
 </div>
 <div class="form-group" style="margin-bottom: 15px;">
-<!-- Selected job field filled automatically -->
 <input type="text" id="app-role" placeholder="Select an available position above..." readonly style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; background-color: #eaeaea; font-weight: 600; color: #12161a; box-sizing: border-box;">
 </div>
 <div class="form-group" style="margin-bottom: 15px;">
